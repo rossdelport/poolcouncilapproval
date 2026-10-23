@@ -55,7 +55,7 @@ section, section.wrap { padding-top: 96px; padding-bottom: 96px; }
 /* Hero */
 .hero { position: relative; color: #fff; padding: 120px 0 110px; overflow: hidden; background: var(--navy); }
 .hero.home { padding: 190px 0 170px; }
-.hero-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.hero-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 60%; }
 .hero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(11,34,51,.88) 0%, rgba(11,34,51,.62) 45%, rgba(11,34,51,.15) 100%); }
 .hero-inner { position: relative; z-index: 1; }
 .hero h1 { color: #fff; font-size: clamp(38px, 6vw, 72px); max-width: 820px; margin: 0 0 22px; }
