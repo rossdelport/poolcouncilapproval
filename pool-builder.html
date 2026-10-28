@@ -40,57 +40,106 @@
   <div class="aw buy-head">
     <p class="kicker">Stock tank pool packages · Perth</p>
     <h1>Design your pool.</h1>
-    <p class="from">Fully installed from $20,000. Every price shown upfront.</p>
+    <p class="from">Fully installed from $20,000 inc. GST. Every price shown upfront.</p>
   </div>
 
   <div class="aw buy-grid">
+    <!-- The big photo. It changes as options are picked. -->
     <div class="gallery">
       <div class="frame">
-        <img id="photo-a" class="on" src="/images/pool/s-vertibar-small-composite-galv.webp" alt="" width="1600" height="900" fetchpriority="high">
-        <img id="photo-b" alt="" width="1600" height="900">
+        <img id="photo-a" class="on" src="/images/pool/s-vertibar-small-composite-galv.webp" alt="" width="1600" height="893" fetchpriority="high">
+        <img id="photo-b" alt="" width="1600" height="893">
+        <span class="badge" id="badge" hidden></span>
       </div>
       <p class="gcap" id="gcap"></p>
     </div>
 
+    <!-- Options. The boxes are filled in from js/packages.js -->
     <form class="config" id="config" onsubmit="return false">
-      <section class="sec" data-sec="size"><h2><b>Pool.</b> Which size is right for you?</h2><div class="tiles" data-key="size"></div>
-        <p class="help">Both are genuine Tarter USA galvanised stock tanks from Terra Tanks, with pump, sand filter, cover and engineering certificate.</p></section>
-      <section class="sec" data-sec="finish"><h2><b>Finish.</b> Pick your colour.</h2><div class="swatches" data-key="finish"></div><p class="swatch-name" id="finish-name"></p></section>
-      <section class="sec" data-sec="fence"><h2><b>Pool fence.</b> Safe, compliant and good-looking.</h2><div class="tiles" data-key="fence"></div>
-        <p class="help">10 metres of WA-compliant pool fence and a self-closing gate are included. We confirm the exact length at your free site visit.</p></section>
-      <section class="sec" data-sec="deck"><h2><b>Deck.</b> Choose a size, then your boards.</h2><div class="tiles" data-key="deckSize"></div><div class="tiles mt" data-key="deckMat"></div></section>
-      <section class="sec" data-sec="land"><h2><b>Garden.</b> $2,000 of landscaping included.</h2>
-        <p class="help">Pick your plants, turf and mulch with our local landscaper. Want more? We price it at your free site visit.</p></section>
-      <section class="sec" data-sec="extras"><h2><b>Extras.</b> Make it even better.</h2><div class="tiles" data-key="extras"></div>
-        <p class="help">Extras are Terra Tanks products, charged at their own published prices.</p></section>
-
-      <section class="sec summary" id="summary">
-        <h2 class="big">Your new pool.</h2>
-        <ul class="lines" id="lines"></ul>
-        <p class="sum-total"><span>Total</span><span id="total2"></span></p>
-        <p class="fine">Includes GST, installation and council approval. Perth metro. No payment today. We confirm your yard and final price at a free site visit. <button type="button" class="linkbtn" id="share">Copy a link to this design</button></p>
+      <section class="sec">
+        <h2 id="h-size"><b>Pool.</b> Which size is right for you?</h2>
+        <div class="tiles" data-key="size" role="radiogroup" aria-labelledby="h-size"></div>
+        <p class="help">Both are genuine Tarter USA galvanised stock tanks from Terra Tanks, with pump, sand filter, cover and engineering certificate.</p>
+      </section>
+      <section class="sec">
+        <h2 id="h-finish"><b>Colour.</b> Pick your pool's finish.</h2>
+        <div class="colour">
+          <p class="colour-top"><b id="finish-name"></b><span id="finish-price"></span></p>
+          <div class="swatches" data-key="finish" role="radiogroup" aria-labelledby="h-finish"></div>
+        </div>
+        <p class="help">Classic galvanised, or a Terra Tanks powder-coat colour at Terra Tanks' own price.</p>
+      </section>
+      <section class="sec">
+        <h2 id="h-fence"><b>Fence.</b> Which one suits your yard?</h2>
+        <div class="tiles" data-key="fence" role="radiogroup" aria-labelledby="h-fence"></div>
+        <p class="help">10 metres of WA-compliant pool fence and a self-closing gate are included. We confirm the exact length at your free site visit.</p>
+      </section>
+      <section class="sec">
+        <h2><b>Deck.</b> Choose a size, then your boards.</h2>
+        <h3 class="glabel" id="h-dsize">Deck size</h3>
+        <div class="tiles" data-key="deckSize" role="radiogroup" aria-labelledby="h-dsize"></div>
+        <h3 class="glabel" id="h-dmat">Boards</h3>
+        <div class="tiles" data-key="deckMat" role="radiogroup" aria-labelledby="h-dmat"></div>
+        <p class="help">Board prices are for the deck size you picked.</p>
+      </section>
+      <section class="sec">
+        <h2 id="h-land"><b>Garden.</b> Landscaping is included.</h2>
+        <div class="tiles" data-key="land" role="radiogroup" aria-labelledby="h-land"></div>
+        <p class="help">Want more? We price it at your free site visit.</p>
+      </section>
+      <section class="sec">
+        <h2 id="h-extras"><b>Extras.</b> Make it even better.</h2>
+        <div class="tiles" data-key="extras" role="group" aria-labelledby="h-extras"></div>
+        <p class="help">Extras are Terra Tanks products, charged at their own published prices.</p>
       </section>
     </form>
-
-    <form class="qform" id="qform" action="https://formsubmit.co/rossdelport1998@gmail.com" method="POST">
-      <h2 class="big">Get your quote.</h2>
-      <p class="fine">We'll email your itemised quote now and call within one business day to book your free site visit.</p>
-      <input type="hidden" name="_template" value="table"><input type="hidden" name="_subject" id="f-subject">
-      <input type="hidden" name="_next" id="f-next"><input type="hidden" name="_autoresponse" id="f-auto">
-      <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
-      <input type="hidden" name="quote_number" id="f-num"><input type="hidden" name="quote" id="f-quote"><input type="hidden" name="total" id="f-total"><input type="hidden" name="design_link" id="f-link">
-      <div class="two"><label>Name<input name="name" required autocomplete="name"></label><label>Phone<input name="phone" type="tel" required autocomplete="tel"></label></div>
-      <div class="two"><label>Email<input name="email" type="email" required autocomplete="email"></label><label>Suburb<input name="suburb" required autocomplete="address-level2"></label></div>
-      <label>Anything we should know?<textarea name="notes" rows="2" placeholder="Slope, access, timing..."></textarea></label>
-      <button class="abtn wide" type="submit">Send me this quote</button>
-    </form>
   </div>
+
+  <!-- Summary and quote form -->
+  <section class="checkout" id="quote">
+    <div class="aw co-grid">
+      <div class="co-sum">
+        <h2>Your new pool.</h2>
+        <img class="co-photo" id="co-photo" src="/images/pool/s-vertibar-small-composite-galv.webp" alt="" width="1600" height="893" loading="lazy">
+        <ul class="lines" id="lines"></ul>
+        <p class="sum-total"><span>Total inc. GST</span><span id="total2"></span></p>
+        <p class="fine">Includes installation and council approval. Perth metro. No payment today. We confirm your yard and final price at a free site visit. <button type="button" class="linkbtn" id="share">Copy a link to this design</button></p>
+      </div>
+
+      <form class="qform" id="qform" action="https://formsubmit.co/rossdelport1998@gmail.com" method="POST">
+        <h2>Get your quote.</h2>
+        <p class="fine">We'll email your itemised quote now and call within one business day to book your free site visit.</p>
+        <input type="hidden" name="_template" value="table"><input type="hidden" name="_subject" id="f-subject">
+        <input type="hidden" name="_next" id="f-next"><input type="hidden" name="_autoresponse" id="f-auto">
+        <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+        <input type="hidden" name="quote_number" id="f-num"><input type="hidden" name="quote" id="f-quote"><input type="hidden" name="total" id="f-total"><input type="hidden" name="design_link" id="f-link">
+        <div class="two"><label>Name<input name="name" required autocomplete="name"></label><label>Phone<input name="phone" type="tel" required autocomplete="tel"></label></div>
+        <div class="two"><label>Email<input name="email" type="email" required autocomplete="email"></label><label>Suburb<input name="suburb" required autocomplete="address-level2"></label></div>
+        <label>Anything we should know?<textarea name="notes" rows="2" placeholder="Slope, access, timing..."></textarea></label>
+        <button class="abtn wide" type="submit">Send me this quote</button>
+      </form>
+    </div>
+  </section>
 </main>
 
+<!-- Sticky footer: running total, "See your build" list and quote button -->
+<div class="scrim" id="scrim"></div>
 <div class="bag" id="bag">
+  <div class="bag-panel" id="build" role="region" aria-label="Your build">
+    <div class="aw">
+      <h2>Your build</h2>
+      <ul class="lines" id="build-lines"></ul>
+      <p class="sum-total"><span>Total inc. GST</span><span id="build-total"></span></p>
+      <p class="fine">Installed in Perth metro, with council approval. Final price confirmed at a free site visit.</p>
+    </div>
+  </div>
   <div class="aw bag-in">
-    <div class="bag-sum"><b>Your pool</b><span id="bag-desc"></span></div>
-    <div class="bag-right"><div class="bag-total"><span id="total"></span><small>inc. GST, installed</small></div><a class="abtn" href="#qform">Get my quote</a></div>
+    <p class="bag-desc"><b>Your pool</b><span id="bag-desc"></span></p>
+    <button class="bag-toggle" id="see" type="button" aria-expanded="false" aria-controls="build">
+      <span class="bag-total" id="total" aria-live="polite"></span>
+      <span class="bag-see">inc. GST · See your build <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M2 8l4-4 4 4"/></svg></span>
+    </button>
+    <a class="abtn" id="go" href="#qform">Get my quote</a>
   </div>
 </div>
 
@@ -103,80 +152,101 @@
 <script>
 var state = PKG.fromHash(location.hash);
 var form = document.getElementById("config");
-var view = "scene";
+var closeUp = null; // a close-up photo of the last thing picked, if there is one
+function $(id) { return document.getElementById(id); }
 
-// Option tiles
-function tiles(key) {
-  var multi = key === "extras";
-  return PKG[key].map(function (o) {
-    var price = key === "deckSize" ? PKG.deckPrice[o.id][state.deckMat]
-      : key === "deckMat" ? PKG.deckPrice[state.deckSize][o.id] - PKG.deckPrice[state.deckSize].composite : o.price;
+// Price shown inside each box. The deck size and board boxes add up to the deck price in the quote.
+function priceOf(key, id) {
+  if (key === "deckSize") return PKG.deckPrice[id].composite;
+  if (key === "deckMat") return PKG.deckPrice[state.deckSize][id] - PKG.deckPrice[state.deckSize].composite;
+  return PKG.find(key, id).price;
+}
+
+// Build the option boxes and colour dots from the price list
+form.querySelectorAll("[data-key]").forEach(function (box) {
+  var key = box.getAttribute("data-key"), multi = key === "extras";
+  box.innerHTML = PKG[key].map(function (o) {
     var on = multi ? state.extras.indexOf(o.id) > -1 : state[key] === o.id;
-    return '<label class="tile"><input type="' + (multi ? "checkbox" : "radio") + '" name="' + key + '" value="' + o.id + '"' + (on ? " checked" : "") + '>' +
+    var input = '<input type="' + (multi ? "checkbox" : "radio") + '" name="' + key + '" value="' + o.id + '"' + (on ? " checked" : "");
+    if (key === "finish") {
+      return '<label class="sw" title="' + o.name + '">' + input + ' aria-label="' + o.name + ', ' + PKG.priceText(o.price) + '">' +
+        '<span style="background:' + o.color + '"></span></label>';
+    }
+    return '<label class="tile">' + input + '>' + (multi ? '<span class="tick"></span>' : '') +
       '<span class="t-main"><span class="t-name">' + o.name + '</span>' + (o.note ? '<span class="t-note">' + o.note + '</span>' : '') + '</span>' +
-      '<span class="t-price">' + PKG.priceText(price) + '</span></label>';
+      '<span class="t-price"></span></label>';
   }).join("");
-}
-function swatches() {
-  return PKG.finish.map(function (o) {
-    return '<label class="sw" title="' + o.name + '"><input type="radio" name="finish" value="' + o.id + '"' + (state.finish === o.id ? " checked" : "") + '>' +
-      '<span style="background:' + o.color + '"></span></label>';
-  }).join("");
-}
-function renderOptions() {
-  form.querySelectorAll(".tiles").forEach(function (box) { box.innerHTML = tiles(box.getAttribute("data-key")); });
-  form.querySelector(".swatches").innerHTML = swatches();
-}
+});
 
-// Photo shown on the left
-function photoFor() {
-  if (view === "size") return { src: "size-" + state.size, cap: PKG.find("size", state.size).name };
-  if (view.indexOf("extra-") === 0) return { src: view, cap: PKG.find("extras", view.slice(6)).name };
-  return {
-    src: ["s", state.fence, state.deckSize, state.deckMat, state.finish].join("-"),
-    cap: [PKG.find("finish", state.finish).name + " pool", PKG.find("fence", state.fence).name, PKG.find("deckSize", state.deckSize).name.replace("deck", PKG.find("deckMat", state.deckMat).short + " deck")].join(" · ")
-  };
+// The big photo. Missing photos fall back to the next best one, so it never shows a broken image.
+function photoList() {
+  var fin = PKG.find("finish", state.finish);
+  var deck = PKG.find("deckSize", state.deckSize).name.replace("deck", PKG.find("deckMat", state.deckMat).short + " deck");
+  var cap = [fin.name + " pool", PKG.find("fence", state.fence).name, deck].join(" · ");
+  var list = PKG.photos(state).map(function (src, i) {
+    var note = !i ? "" : i === 1 && state.finish !== "galv" ? "Shown in galvanised · " + fin.name + " photo coming soon" : "Photo of this exact build coming soon";
+    return { src: src, cap: cap, note: note };
+  });
+  if (closeUp) list.unshift(closeUp);
+  return list;
 }
-var shown = document.getElementById("photo-a"), hidden = document.getElementById("photo-b");
+var shown = $("photo-a"), hidden = $("photo-b");
+function caption(p) {
+  $("gcap").textContent = p.cap;
+  $("badge").textContent = p.note || "";
+  $("badge").hidden = !p.note;
+  shown.alt = p.cap;
+}
 function showPhoto() {
-  var p = photoFor(), url = "/images/pool/" + p.src + ".webp";
-  document.getElementById("gcap").textContent = p.cap;
-  if (shown.getAttribute("src") === url) return;
-  hidden.onload = function () {
-    hidden.classList.add("on"); shown.classList.remove("on");
-    var t = shown; shown = hidden; hidden = t;
-  };
-  // A missing photo falls back to the main build view
-  hidden.onerror = function () { if (view !== "scene") { view = "scene"; showPhoto(); } };
-  hidden.src = url;
+  var list = photoList();
+  (function next() {
+    var p = list.shift();
+    if (!p) return;
+    var url = "/images/pool/" + p.src + ".webp";
+    if (shown.getAttribute("src") === url) { hidden.onload = hidden.onerror = null; caption(p); return; }
+    hidden.onerror = next;
+    hidden.onload = function () {
+      hidden.onload = hidden.onerror = null;
+      hidden.classList.add("on"); shown.classList.remove("on");
+      shown.alt = ""; var t = shown; shown = hidden; hidden = t;
+      caption(p);
+      if (!p.close) $("co-photo").src = url;
+    };
+    hidden.src = url;
+  })();
 }
 
 function update() {
-  var q = PKG.quote(state);
-  document.getElementById("total").textContent = PKG.money(q.total);
-  document.getElementById("total2").textContent = PKG.money(q.total);
-  var f = PKG.find("finish", state.finish);
-  document.getElementById("finish-name").innerHTML = "<b>" + f.name + "</b> " + PKG.priceText(f.price);
-  document.getElementById("bag-desc").textContent = [PKG.find("size", state.size).name, PKG.find("fence", state.fence).name, PKG.find("deckSize", state.deckSize).name, PKG.find("finish", state.finish).name].join(" · ");
-  document.getElementById("lines").innerHTML = q.lines.map(function (l, i) {
-    return '<li><span>' + l.label + '<small>' + l.detail + '</small></span><span>' + (i ? PKG.priceText(l.price) : PKG.money(l.price)) + '</span></li>';
-  }).join("");
+  var q = PKG.quote(state), fin = PKG.find("finish", state.finish);
+  // Prices inside the boxes
+  form.querySelectorAll(".tile input").forEach(function (input) {
+    var p = priceOf(input.name, input.value), el = input.parentNode.querySelector(".t-price");
+    el.textContent = PKG.priceText(p);
+    el.classList.toggle("free", !p);
+  });
+  $("finish-name").textContent = fin.name;
+  $("finish-price").textContent = PKG.priceText(fin.price);
+  // Running total, the build list in the footer and the summary
+  $("total").textContent = $("total2").textContent = $("build-total").textContent = PKG.money(q.total);
+  $("lines").innerHTML = $("build-lines").innerHTML = PKG.linesHTML(q);
+  $("bag-desc").textContent = [PKG.find("size", state.size).name, fin.name, PKG.find("fence", state.fence).name, q.lines[4].label /* the deck line */].join(" · ");
   history.replaceState(null, "", "#" + PKG.toHash(state));
   fillQuote(q);
   showPhoto();
 }
 
+// Hidden quote fields sent to FormSubmit with the customer's details
 function link() { return location.origin + "/pool-builder.html#" + PKG.toHash(state); }
 function fillQuote(q) {
-  var num = document.getElementById("f-num").value || "PCA-" + Date.now().toString(36).toUpperCase().slice(-6);
+  var num = $("f-num").value || "PCA-" + Date.now().toString(36).toUpperCase().slice(-6);
   var text = q.lines.map(function (l, i) { return l.label + ": " + (i ? PKG.priceText(l.price) : PKG.money(l.price)); }).join("\n");
-  document.getElementById("f-num").value = num;
-  document.getElementById("f-quote").value = text;
-  document.getElementById("f-total").value = PKG.money(q.total) + " inc. GST";
-  document.getElementById("f-link").value = link();
-  document.getElementById("f-subject").value = "Pool quote " + num + ": " + PKG.money(q.total);
-  document.getElementById("f-next").value = location.origin + "/quote-sent.html?n=" + num + "#" + PKG.toHash(state);
-  document.getElementById("f-auto").value = "Thanks for designing your pool with us! Here is your quote " + num + ":\n\n" + text +
+  $("f-num").value = num;
+  $("f-quote").value = text;
+  $("f-total").value = PKG.money(q.total) + " inc. GST";
+  $("f-link").value = link();
+  $("f-subject").value = "Pool quote " + num + ": " + PKG.money(q.total);
+  $("f-next").value = location.origin + "/quote-sent.html?n=" + num + "#" + PKG.toHash(state);
+  $("f-auto").value = "Thanks for designing your pool with us! Here is your quote " + num + ":\n\n" + text +
     "\n\nTotal: " + PKG.money(q.total) + " inc. GST\n\nView or change your design: " + link() +
     "\n\nWe'll call you within one business day to book a free site visit. Questions? Call Ross on 0400 369 865.";
 }
@@ -184,22 +254,31 @@ function fillQuote(q) {
 form.addEventListener("change", function (e) {
   var t = e.target;
   if (t.name === "extras") {
-    state.extras = [].slice.call(form.querySelectorAll('input[name="extras"]:checked')).map(function (i) { return i.value; });
-    view = t.checked ? "extra-" + t.value : "scene";
+    state.extras = [].map.call(form.querySelectorAll('input[name="extras"]:checked'), function (i) { return i.value; });
+    closeUp = t.checked ? { src: "extra-" + t.value, cap: PKG.find("extras", t.value).name, close: true } : null;
   } else {
     state[t.name] = t.value;
-    view = t.name === "size" ? "size" : "scene";
+    closeUp = t.name === "size" ? { src: "size-" + t.value, cap: PKG.find("size", t.value).name, close: true } : null;
   }
-  if (t.name === "deckSize" || t.name === "deckMat") renderOptions();
   update();
 });
 
-document.getElementById("share").addEventListener("click", function () {
+// "See your build" slides up the full list from the footer
+var bag = $("bag");
+function openBuild(on) {
+  bag.classList.toggle("open", on);
+  $("scrim").classList.toggle("on", on);
+  $("see").setAttribute("aria-expanded", on);
+}
+$("see").onclick = function () { openBuild(!bag.classList.contains("open")); };
+$("scrim").onclick = $("go").onclick = function () { openBuild(false); };
+document.addEventListener("keydown", function (e) { if (e.key === "Escape") openBuild(false); });
+
+$("share").onclick = function () {
   var b = this;
   navigator.clipboard.writeText(link()).then(function () { b.textContent = "Link copied!"; });
-});
+};
 
-renderOptions();
 update();
 </script>
 </body>

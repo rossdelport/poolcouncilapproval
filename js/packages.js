@@ -99,3 +99,18 @@ PKG.quote = function (s) {
 PKG.priceText = function (p) {
   return p ? "+" + PKG.money(p) : "Included";
 };
+
+// Photos for a build, best first. If a photo is missing, the page shows the next one,
+// so new colour photos appear by themselves once they are added to images/pool.
+PKG.photos = function (s) {
+  var scene = ["s", s.fence, s.deckSize, s.deckMat].join("-");
+  var list = [scene + "-" + s.finish, scene + "-galv", "s-vertibar-small-composite-galv"];
+  return list.filter(function (name, i) { return list.indexOf(name) === i; });
+};
+
+// The quote lines as list items, used by the designer and the quote page
+PKG.linesHTML = function (q) {
+  return q.lines.map(function (l, i) {
+    return "<li><span>" + l.label + "<small>" + l.detail + "</small></span><span>" + (i ? PKG.priceText(l.price) : PKG.money(l.price)) + "</span></li>";
+  }).join("");
+};
