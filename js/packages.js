@@ -25,9 +25,9 @@ var PKG = {
     { id: "large", name: "25 m² deck", note: "Wraps the pool, with room to lounge and entertain." }
   ],
   deckMat: [
-    { id: "composite", name: "Composite, ash grey", note: "No oiling, no splinters, stays cooler underfoot.", top: "#bdb7ad", face: "#8f8a82" },
-    { id: "merbau",    name: "Merbau hardwood", note: "Rich natural timber. Oil once or twice a year.", top: "#9a5a3a", face: "#6e3d26" },
-    { id: "premium",   name: "Premium composite", note: "Deeper timber grain and a longer warranty.", top: "#b48d64", face: "#86684a" }
+    { id: "composite", name: "Composite, ash grey", short: "ash grey composite", note: "No oiling, no splinters, stays cooler underfoot.", top: "#bdb7ad", face: "#8f8a82" },
+    { id: "merbau",    name: "Merbau hardwood", short: "merbau", note: "Rich natural timber. Oil once or twice a year.", top: "#9a5a3a", face: "#6e3d26" },
+    { id: "premium",   name: "Premium composite", short: "premium composite", note: "Deeper timber grain and a longer warranty.", top: "#b48d64", face: "#86684a" }
   ],
   // Deck price depends on size and material
   deckPrice: {
@@ -86,7 +86,7 @@ PKG.quote = function (s) {
     { label: size.name, detail: "Genuine Tarter USA stock tank from Terra Tanks", price: size.price },
     { label: finish.name, detail: "Pool colour", price: finish.price },
     { label: fence.name, detail: "Pool fence, 10 m plus self-closing gate", price: fence.price },
-    { label: dSize.name + ", " + dMat.name.toLowerCase(), detail: "Deck", price: PKG.deckPrice[s.deckSize][s.deckMat] },
+    { label: dSize.name.replace("deck", dMat.short + " deck"), detail: "Deck", price: PKG.deckPrice[s.deckSize][s.deckMat] },
     { label: land.name, detail: "Landscaping", price: land.price }
   ];
   s.extras.forEach(function (id) {

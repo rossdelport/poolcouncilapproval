@@ -6,52 +6,41 @@
 <title>Your Pool Quote | Pool Council Approval</title>
 <meta name="robots" content="noindex">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-<meta name="theme-color" content="#0b2233">
+<meta name="theme-color" content="#ffffff">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@400;500;600&display=swap">
-<link rel="stylesheet" href="/styles.css">
-<link rel="stylesheet" href="/packages.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="/shop.css">
 <style>
-.qs { background: var(--sand); padding: 64px 0 96px; }
-.qs-card { max-width: 760px; margin: 0 auto; background: #fff; border-radius: 24px; padding: 48px; box-shadow: 0 30px 60px rgba(11,34,51,.1); }
-.qs-card h1 { font-size: clamp(32px, 4vw, 44px); margin: 0 0 10px; }
-.qs-card .sub { color: var(--muted); margin: 0 0 28px; }
-.qs-card img { border-radius: 16px; margin-bottom: 28px; }
-.meta { display: flex; justify-content: space-between; gap: 16px; font-size: 14px; color: var(--muted); border-bottom: 2px solid var(--navy); padding-bottom: 10px; }
-.meta strong { color: var(--navy); }
-.lines { list-style: none; padding: 0; margin: 0; }
-.lines li { display: flex; justify-content: space-between; gap: 16px; padding: 12px 0; border-bottom: 1px solid var(--line); }
-.lines small { display: block; color: var(--muted); font-size: 13px; }
-.lines span:last-child { white-space: nowrap; font-weight: 600; color: var(--navy); }
-.tot { display: flex; justify-content: space-between; font-family: var(--serif); font-size: 30px; color: var(--navy); margin: 16px 0 6px; }
-.next { margin-top: 32px; }
-.next .btn { margin-right: 10px; }
-.btn.line { background: transparent; border: 1.5px solid var(--navy); color: var(--navy); }
-@media (max-width: 600px) { .qs-card { padding: 28px 20px; } }
-@media print { .qs { padding: 0; background: #fff; } .qs-card { box-shadow: none; padding: 0; } }
+.qs { padding: 56px 0 80px; }
+.qs-in { max-width: 760px; margin: 0 auto; }
+.qs h1 { font-size: clamp(36px, 5vw, 52px); }
+.qs .sub { color: var(--grey); font-size: 19px; margin: 12px 0 32px; }
+.qs-photo { width: 100%; height: auto; aspect-ratio: 16/9; object-fit: cover; border-radius: 24px; background: var(--panel); margin-bottom: 32px; }
+.meta { display: flex; justify-content: space-between; gap: 16px; font-size: 14px; color: var(--grey); padding-bottom: 12px; border-bottom: 1px solid var(--ink); }
+.meta strong { color: var(--ink); }
+.next { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; margin-top: 30px; }
+@media print { .qs { padding: 0; } .qs-photo { border-radius: 0; } }
 </style>
 </head>
 <body>
-<header class="fh">
-  <div class="wrap fh-bar">
-    <a class="logo light" href="/"><img src="/favicon.svg" alt="" width="30" height="30"><span>Pool Council<em>Approval</em></span></a>
-    <nav class="fh-nav" aria-label="Pool packages"><a href="/pool-packages.html">Pool Packages</a><a href="/pool-builder.html">Design Your Pool</a></nav>
-    <a class="fh-call" href="tel:+61400369865">0400 369 865</a>
+<header class="ah">
+  <div class="aw ah-bar">
+    <a class="ah-logo" href="/"><img src="/favicon.svg" alt="" width="26" height="26"><span>Pool Council Approval</span></a>
+    <nav class="ah-nav" aria-label="Pool packages"><a href="/pool-packages.html">Overview</a><a href="/pool-builder.html">Design</a><a href="tel:+61400369865">0400 369 865</a></nav>
   </div>
 </header>
 <main class="qs">
-  <div class="wrap">
-    <div class="qs-card">
-      <p class="eyebrow no-print">Quote sent</p>
-      <h1>Your pool quote is on its way</h1>
-      <p class="sub">A copy is in your inbox. We'll call you within one business day to book a free site visit.</p>
-      <div class="meta"><span>Quote <strong id="num"></strong></span><span id="date"></span></div>
-      <ul class="lines" id="lines"></ul>
-      <p class="tot"><span>Total inc. GST</span><span id="total"></span></p>
-      <p class="fine" style="color:var(--muted);font-size:14px">Perth metro. Final price confirmed at a free site visit before any work starts. Pool Council Approval, 0400 369 865.</p>
-      <p class="next no-print"><button class="btn" type="button" onclick="window.print()">Print or save as PDF</button><a class="btn line" id="edit" href="/pool-builder.html">Change my design</a></p>
-    </div>
+  <div class="aw qs-in">
+    <p class="kicker no-print">Quote sent</p>
+    <h1>Your pool quote is on its way.</h1>
+    <p class="sub">A copy is in your inbox. We'll call you within one business day to book a free site visit.</p>
+    <img class="qs-photo" id="photo" alt="Your pool design" width="1600" height="900">
+    <div class="meta"><span>Quote <strong id="num"></strong></span><span id="date"></span></div>
+    <ul class="lines" id="lines"></ul>
+    <p class="sum-total"><span>Total inc. GST</span><span id="total"></span></p>
+    <p class="fine">Perth metro. Final price confirmed at a free site visit before any work starts. Pool Council Approval, 0400 369 865. Images are illustrative.</p>
+    <p class="next no-print"><button class="abtn" type="button" onclick="window.print()">Print or save as PDF</button><a id="edit" href="/pool-builder.html">Change my design ›</a></p>
   </div>
 </main>
 <script src="/js/packages.js"></script>
@@ -60,6 +49,7 @@ var s = PKG.fromHash(location.hash), q = PKG.quote(s);
 var num = (location.search.match(/[?&]n=([A-Z0-9-]+)/) || [])[1] || "";
 document.getElementById("num").textContent = num;
 document.getElementById("date").textContent = new Date().toLocaleDateString("en-AU", { day: "numeric", month: "long", year: "numeric" });
+document.getElementById("photo").src = "/images/pool/s-" + [s.fence, s.deckSize, s.deckMat, s.land].join("-") + ".webp";
 document.getElementById("lines").innerHTML = q.lines.map(function (l, i) {
   return "<li><span>" + l.label + "<small>" + l.detail + "</small></span><span>" + (i ? PKG.priceText(l.price) : PKG.money(l.price)) + "</span></li>";
 }).join("");
