@@ -21,6 +21,12 @@ h1, h2, h3 { font-weight: 600; letter-spacing: -0.025em; line-height: 1.1; margi
 .fine { color: var(--grey); font-size: 13px; line-height: 1.5; }
 
 /* Header */
+/* Guarantee banner above the header */
+.promo { display: block; background: #1d1d1f; color: #fff; text-align: center; font-size: 13px; font-weight: 500; line-height: 1.4; padding: 10px 16px; }
+.promo:hover { text-decoration: none; color: #fff; }
+.promo span { color: #6cb4ff; margin-left: 8px; white-space: nowrap; }
+.promo i { font-style: normal; }
+@media (max-width: 600px) { .promo i { display: none; } }
 .ah { position: sticky; top: 0; z-index: 40; background: rgba(255,255,255,.82); backdrop-filter: saturate(180%) blur(20px); -webkit-backdrop-filter: saturate(180%) blur(20px); border-bottom: 1px solid rgba(0,0,0,.08); }
 .ah-bar { display: flex; align-items: center; justify-content: space-between; gap: 16px; height: 52px; }
 .ah-logo { display: flex; align-items: center; gap: 9px; color: var(--ink); font-weight: 600; font-size: 15px; }
@@ -270,5 +276,5 @@ a.card:hover { text-decoration: none; transform: translateY(-4px); box-shadow: 0
   *, *::before, *::after { transition: none !important; }
 }
 @media print {
-  .ah, .bag, .scrim, .af, .no-print { display: none !important; }
+  .promo, .ah, .bag, .scrim, .af, .no-print { display: none !important; }
 }

@@ -108,6 +108,13 @@ PKG.photos = function (s) {
   return list.filter(function (name, i) { return list.indexOf(name) === i; });
 };
 
+// Each photo comes in two sizes (900 and 1400 wide). Phones get the small one, so photos load fast.
+PKG.img = function (img, name, sizes) {
+  img.sizes = sizes || "(max-width: 600px) 300px, 760px";
+  img.srcset = "/images/pool/" + name + "-sm.webp 900w, /images/pool/" + name + ".webp 1400w";
+  img.src = "/images/pool/" + name + ".webp";
+};
+
 // The quote lines as list items, used by the designer and the quote page
 PKG.linesHTML = function (q) {
   return q.lines.map(function (l, i) {
