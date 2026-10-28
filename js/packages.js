@@ -41,8 +41,7 @@ var PKG = {
   extras: [
     { id: "heat",  name: "Heat pump", note: "Swim all year round.", price: 2750 },
     { id: "cover", name: "Premium hard-shell cover", note: "Keeps leaves out and warmth in.", price: 875 },
-    { id: "liner", name: "Interior liner", note: "Soft blue finish and a 3-year warranty.", price: 400 },
-    { id: "bench", name: "Bench seat", note: "Sit back and soak.", price: 295 }
+    { id: "liner", name: "Interior liner", note: "Soft blue finish and a 3-year warranty.", price: 400 }
   ]
 };
 // =====================================================
