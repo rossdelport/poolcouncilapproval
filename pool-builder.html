@@ -11,7 +11,7 @@
 <meta property="og:title" content="Design Your Stock Tank Pool">
 <meta property="og:description" content="Choose your pool, fence, deck and garden and see your price instantly. From $20,000 installed in Perth.">
 <meta property="og:url" content="https://poolcouncilapproval.com.au/pool-builder.html">
-<meta property="og:image" content="https://poolcouncilapproval.com.au/images/pool/s-glass-large-merbau-premium.webp">
+<meta property="og:image" content="https://poolcouncilapproval.com.au/images/pool/s-glass-large-merbau-galv.webp">
 <meta property="og:locale" content="en_AU">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -25,7 +25,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
-<link rel="preload" as="image" href="/images/pool/s-vertibar-small-composite-basic.webp" fetchpriority="high">
+<link rel="preload" as="image" href="/images/pool/s-vertibar-small-composite-galv.webp" fetchpriority="high">
 <link rel="stylesheet" href="/shop.css">
 </head>
 <body>
@@ -46,7 +46,7 @@
   <div class="aw buy-grid">
     <div class="gallery">
       <div class="frame">
-        <img id="photo-a" class="on" src="/images/pool/s-vertibar-small-composite-basic.webp" alt="" width="1600" height="900" fetchpriority="high">
+        <img id="photo-a" class="on" src="/images/pool/s-vertibar-small-composite-galv.webp" alt="" width="1600" height="900" fetchpriority="high">
         <img id="photo-b" alt="" width="1600" height="900">
       </div>
       <p class="gcap" id="gcap"></p>
@@ -59,7 +59,8 @@
       <section class="sec" data-sec="fence"><h2><b>Pool fence.</b> Safe, compliant and good-looking.</h2><div class="tiles" data-key="fence"></div>
         <p class="help">10 metres of WA-compliant pool fence and a self-closing gate are included. We confirm the exact length at your free site visit.</p></section>
       <section class="sec" data-sec="deck"><h2><b>Deck.</b> Choose a size, then your boards.</h2><div class="tiles" data-key="deckSize"></div><div class="tiles mt" data-key="deckMat"></div></section>
-      <section class="sec" data-sec="land"><h2><b>Garden.</b> Finished from day one.</h2><div class="tiles" data-key="land"></div></section>
+      <section class="sec" data-sec="land"><h2><b>Garden.</b> $2,000 of landscaping included.</h2>
+        <p class="help">Pick your plants, turf and mulch with our local landscaper. Want more? We price it at your free site visit.</p></section>
       <section class="sec" data-sec="extras"><h2><b>Extras.</b> Make it even better.</h2><div class="tiles" data-key="extras"></div>
         <p class="help">Extras are Terra Tanks products, charged at their own published prices.</p></section>
 
@@ -129,12 +130,11 @@ function renderOptions() {
 
 // Photo shown on the left
 function photoFor() {
-  if (view === "finish") return { src: "finish-" + state.finish, cap: PKG.find("finish", state.finish).name + " finish" };
   if (view === "size") return { src: "size-" + state.size, cap: PKG.find("size", state.size).name };
   if (view.indexOf("extra-") === 0) return { src: view, cap: PKG.find("extras", view.slice(6)).name };
   return {
-    src: ["s", state.fence, state.deckSize, state.deckMat, state.land].join("-"),
-    cap: [PKG.find("fence", state.fence).name, PKG.find("deckSize", state.deckSize).name.replace("deck", PKG.find("deckMat", state.deckMat).short + " deck"), PKG.find("land", state.land).name].join(" · ")
+    src: ["s", state.fence, state.deckSize, state.deckMat, state.finish].join("-"),
+    cap: [PKG.find("finish", state.finish).name + " pool", PKG.find("fence", state.fence).name, PKG.find("deckSize", state.deckSize).name.replace("deck", PKG.find("deckMat", state.deckMat).short + " deck")].join(" · ")
   };
 }
 var shown = document.getElementById("photo-a"), hidden = document.getElementById("photo-b");
@@ -157,7 +157,7 @@ function update() {
   document.getElementById("total2").textContent = PKG.money(q.total);
   var f = PKG.find("finish", state.finish);
   document.getElementById("finish-name").innerHTML = "<b>" + f.name + "</b> " + PKG.priceText(f.price);
-  document.getElementById("bag-desc").textContent = [PKG.find("size", state.size).name, PKG.find("fence", state.fence).name, PKG.find("deckSize", state.deckSize).name, PKG.find("land", state.land).name].join(" · ");
+  document.getElementById("bag-desc").textContent = [PKG.find("size", state.size).name, PKG.find("fence", state.fence).name, PKG.find("deckSize", state.deckSize).name, PKG.find("finish", state.finish).name].join(" · ");
   document.getElementById("lines").innerHTML = q.lines.map(function (l, i) {
     return '<li><span>' + l.label + '<small>' + l.detail + '</small></span><span>' + (i ? PKG.priceText(l.price) : PKG.money(l.price)) + '</span></li>';
   }).join("");
@@ -188,7 +188,7 @@ form.addEventListener("change", function (e) {
     view = t.checked ? "extra-" + t.value : "scene";
   } else {
     state[t.name] = t.value;
-    view = t.name === "finish" ? "finish" : t.name === "size" ? "size" : "scene";
+    view = t.name === "size" ? "size" : "scene";
   }
   if (t.name === "deckSize" || t.name === "deckMat") renderOptions();
   update();

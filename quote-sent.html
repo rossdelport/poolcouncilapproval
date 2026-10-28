@@ -49,7 +49,7 @@ var s = PKG.fromHash(location.hash), q = PKG.quote(s);
 var num = (location.search.match(/[?&]n=([A-Z0-9-]+)/) || [])[1] || "";
 document.getElementById("num").textContent = num;
 document.getElementById("date").textContent = new Date().toLocaleDateString("en-AU", { day: "numeric", month: "long", year: "numeric" });
-document.getElementById("photo").src = "/images/pool/s-" + [s.fence, s.deckSize, s.deckMat, s.land].join("-") + ".webp";
+document.getElementById("photo").src = "/images/pool/s-" + [s.fence, s.deckSize, s.deckMat, s.finish].join("-") + ".webp";
 document.getElementById("lines").innerHTML = q.lines.map(function (l, i) {
   return "<li><span>" + l.label + "<small>" + l.detail + "</small></span><span>" + (i ? PKG.priceText(l.price) : PKG.money(l.price)) + "</span></li>";
 }).join("");

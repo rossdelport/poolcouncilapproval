@@ -34,10 +34,9 @@ var PKG = {
     small: { composite: 0,    merbau: 1600,  premium: 3600 },
     large: { composite: 7100, merbau: 11000, premium: 16000 }
   },
+  // One landscaping allowance, no garden upgrades (customer picks plants with the landscaper)
   land: [
-    { id: "basic",   name: "Native garden", note: "WA natives, mulch and turf or gravel.", price: 0 },
-    { id: "plus",    name: "Garden Plus", note: "Twice the planting, plus a feature plant.", price: 2900 },
-    { id: "premium", name: "Resort garden", note: "Paving, a feature tree and garden lighting.", price: 7100 }
+    { id: "basic", name: "Landscaping", note: "$2,000 allowance. Choose your plants, turf and mulch with our landscaper.", price: 0 }
   ],
   extras: [
     { id: "heat",  name: "Heat pump", note: "Swim all year round.", price: 2750 },
@@ -87,7 +86,7 @@ PKG.quote = function (s) {
     { label: finish.name, detail: "Pool colour", price: finish.price },
     { label: fence.name, detail: "Pool fence, 10 m plus self-closing gate", price: fence.price },
     { label: dSize.name.replace("deck", dMat.short + " deck"), detail: "Deck", price: PKG.deckPrice[s.deckSize][s.deckMat] },
-    { label: land.name, detail: "Landscaping", price: land.price }
+    { label: land.name, detail: "$2,000 allowance, plants of your choice", price: land.price }
   ];
   s.extras.forEach(function (id) {
     var x = PKG.find("extras", id);
