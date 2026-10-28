@@ -3,178 +3,194 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Build Your Stock Tank Pool | Pool Council Approval</title>
-<meta name="description" content="Design your own stock tank pool package in WA. Pick your pool, fence, deck and garden, see it come to life and get your price instantly.">
+<title>Design Your Stock Tank Pool | Perth Pool Packages</title>
+<meta name="description" content="Design your done-for-you stock tank pool in minutes. Choose your pool, fence, deck and garden, watch it come to life and see every dollar. From $20,000 installed in Perth.">
 <link rel="canonical" href="https://poolcouncilapproval.com.au/pool-builder.html">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Pool Council Approval">
-<meta property="og:title" content="Build Your Stock Tank Pool">
-<meta property="og:description" content="Pick your pool, fence, deck and garden, see it come to life and get your price instantly.">
+<meta property="og:title" content="Design Your Stock Tank Pool">
+<meta property="og:description" content="Choose your pool, fence, deck and garden and see your price instantly. From $20,000 installed in Perth.">
 <meta property="og:url" content="https://poolcouncilapproval.com.au/pool-builder.html">
-<meta property="og:image" content="https://poolcouncilapproval.com.au/og-image.jpg">
+<meta property="og:image" content="https://poolcouncilapproval.com.au/images/pkg/hero.jpg">
 <meta property="og:locale" content="en_AU">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-<!-- Lets the page open full screen like an app when added to an iPad home screen -->
+<!-- Opens full screen like an app when added to an iPad home screen -->
 <link rel="manifest" href="/pool-builder.webmanifest">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-title" content="Pool Builder">
-<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="Pool Designer">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="theme-color" content="#0b2233">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@400;500;600&display=swap">
 <link rel="stylesheet" href="/styles.css">
+<link rel="stylesheet" href="/packages.css">
 <style>
-.pb-head { background: var(--sand); padding: 56px 0 40px; }
-.pb-head h1 { font-size: clamp(34px, 5vw, 56px); margin: 0 0 12px; }
-.pb-head p { color: var(--muted); font-size: 18px; max-width: 640px; margin: 0; }
-.pb { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 48px; align-items: start; padding-top: 40px; padding-bottom: 72px; }
-.stage { position: sticky; top: 92px; }
-.scene { border-radius: 22px; overflow: hidden; box-shadow: 0 24px 50px rgba(11,34,51,.14); background: #e8f5fb; }
+body { background: var(--navy); }
+.cfg { display: grid; grid-template-columns: minmax(0, 1.55fr) minmax(380px, 1fr); height: calc(100vh - 64px); height: calc(100svh - 64px); }
+.cfg-stage { position: relative; display: grid; place-items: center; padding: 40px; background: radial-gradient(ellipse at 50% 35%, #1b4a66 0%, var(--navy) 70%); overflow: hidden; }
+.stage-inner { width: 100%; max-width: 980px; }
+.scene { border-radius: 24px; overflow: hidden; box-shadow: 0 40px 80px rgba(0,0,0,.45), 0 0 0 1px rgba(255,255,255,.06); background: #dfeef3; }
 .scene svg { display: block; width: 100%; height: auto; }
-.pricebar { display: flex; justify-content: space-between; align-items: center; gap: 16px; margin-top: 16px; background: var(--navy); color: #fff; border-radius: 16px; padding: 16px 22px; }
-.pricebar small { display: block; color: rgba(255,255,255,.65); font-size: 13px; }
-.pricebar strong { font-family: var(--serif); font-weight: 400; font-size: 30px; line-height: 1.1; }
-.pricebar .btn { margin: 0; padding: 12px 22px; width: auto; }
-.step { border: 0; padding: 0; margin: 0 0 34px; }
-.step legend { font-family: var(--serif); font-size: 24px; color: var(--navy); padding: 0; margin-bottom: 14px; }
-.step legend span { font-family: var(--sans); font-size: 13px; font-weight: 600; letter-spacing: .14em; color: var(--gold-dark); display: block; margin-bottom: 2px; }
-.choices { display: grid; gap: 10px; }
-.opt { display: grid; grid-template-columns: auto 1fr auto; gap: 4px 14px; align-items: center; padding: 14px 18px; border: 1.5px solid var(--line); border-radius: 14px; cursor: pointer; background: #fff; transition: border-color .2s, box-shadow .2s; }
-.opt:hover { border-color: #d9cdb8; }
-.opt input { position: absolute; opacity: 0; pointer-events: none; }
-.opt:has(input:checked) { border-color: var(--gold); box-shadow: 0 0 0 3px rgba(200,164,106,.22); background: #fffdf8; }
-.opt:has(input:focus-visible) { outline: 2px solid var(--teal); outline-offset: 2px; }
-.tick { width: 22px; height: 22px; border-radius: 50%; border: 1.5px solid #cfc6b8; display: grid; place-items: center; font-size: 12px; color: transparent; }
-.opt input[type=checkbox] ~ .tick { border-radius: 6px; }
-.opt:has(input:checked) .tick { background: var(--gold); border-color: var(--gold); color: var(--navy); }
-.swatch { width: 26px; height: 26px; border-radius: 50%; border: 2px solid rgba(0,0,0,.12); }
-.opt b { font-weight: 600; color: var(--navy); display: block; line-height: 1.35; }
-.opt small { display: block; color: var(--muted); font-size: 14px; line-height: 1.45; }
-.opt em { font-style: normal; font-weight: 600; font-size: 15px; color: var(--navy); white-space: nowrap; }
-.opt em.inc { color: var(--teal); }
-.summary { background: var(--sand); }
-.summary .feature { align-items: start; }
-.summary ul { list-style: none; padding: 0; margin: 0 0 18px; }
-.summary li { display: flex; justify-content: space-between; gap: 16px; padding: 10px 0; border-bottom: 1px solid var(--line); font-size: 16px; }
-.summary li span:last-child { white-space: nowrap; font-weight: 600; color: var(--navy); }
-.summary .total { font-family: var(--serif); font-size: 32px; color: var(--navy); display: flex; justify-content: space-between; margin: 8px 0 6px; }
-.summary .note { color: var(--muted); font-size: 14.5px; }
+.stage-cap { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin: 22px 0 0; padding: 0; list-style: none; }
+.stage-cap li { font-size: 13px; color: rgba(255,255,255,.85); border: 1px solid rgba(255,255,255,.16); border-radius: 999px; padding: 5px 12px; }
+.cfg-panel { padding: 0; background: #fff; display: flex; flex-direction: column; min-height: 0; }
+.stepnav { position: relative; display: flex; gap: 4px; list-style: none; margin: 0; padding: 18px 28px 0; overflow-x: auto; scrollbar-width: none; border-bottom: 1px solid var(--line); }
+.stepnav button { background: none; border: 0; font: inherit; font-size: 13.5px; font-weight: 500; color: var(--muted); padding: 10px 8px 14px; cursor: pointer; white-space: nowrap; border-bottom: 2px solid transparent; }
+.stepnav button b { display: inline-grid; place-items: center; width: 20px; height: 20px; border-radius: 50%; background: var(--sand); font-size: 11px; margin-right: 6px; color: var(--navy); }
+.stepnav button.done b { background: var(--gold); }
+.stepnav button[aria-current] { color: var(--navy); border-bottom-color: var(--gold); }
+.panel-body { flex: 1; overflow-y: auto; padding: 30px 28px 28px; -webkit-overflow-scrolling: touch; }
+.panel-body h1 { font-size: clamp(28px, 3vw, 36px); margin: 0 0 8px; }
+.panel-body .sub { color: var(--muted); margin: 0 0 22px; font-size: 15.5px; line-height: 1.6; }
+.panel-body h2 { font-size: 20px; margin: 26px 0 12px; }
+.panel-foot { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 16px 28px; border-top: 1px solid var(--line); background: #fff; }
+.panel-foot small { display: block; color: var(--muted); font-size: 12.5px; letter-spacing: .04em; }
+.panel-foot strong { font-family: var(--serif); font-weight: 400; font-size: 30px; color: var(--navy); line-height: 1.1; }
+.panel-foot .btn { margin: 0; padding: 14px 24px; white-space: nowrap; }
+.back { background: none; border: 0; font: inherit; color: var(--muted); cursor: pointer; padding: 0; margin: 0 0 14px; font-size: 14px; }
+.quote-lines { list-style: none; padding: 0; margin: 0 0 6px; }
+.quote-lines li { display: flex; justify-content: space-between; gap: 16px; padding: 12px 0; border-bottom: 1px solid var(--line); }
+.quote-lines small { display: block; color: var(--muted); font-size: 13px; }
+.quote-lines span:last-child { white-space: nowrap; font-weight: 600; color: var(--navy); }
+.quote-total { display: flex; justify-content: space-between; font-family: var(--serif); font-size: 28px; color: var(--navy); margin: 14px 0 4px; }
+.fine { color: var(--muted); font-size: 13.5px; line-height: 1.6; }
+.qform { display: grid; gap: 12px; margin-top: 22px; }
+.qform label { display: grid; gap: 5px; font-size: 14px; font-weight: 500; color: var(--navy); }
+.qform input, .qform textarea { font: inherit; padding: 12px 14px; border: 1px solid #d9d3c9; border-radius: 12px; background: #fdfcfa; width: 100%; }
+.qform input:focus, .qform textarea:focus { outline: none; border-color: var(--gold); box-shadow: 0 0 0 4px rgba(200,164,106,.2); }
+.qform .btn { width: 100%; text-align: center; margin: 6px 0 0; }
+.two { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
 .linkbtn { background: none; border: 0; padding: 0; color: var(--teal); font: inherit; font-weight: 600; cursor: pointer; text-decoration: underline; }
 @media (max-width: 900px) {
-  .pb { grid-template-columns: 1fr; gap: 24px; padding-top: 0; }
-  .pb-head { padding: 36px 0 28px; }
-  .stage { top: 0; z-index: 10; margin: 0 -20px; background: #fff; padding: 0 0 10px; box-shadow: 0 10px 20px rgba(11,34,51,.08); }
-  .scene { border-radius: 0; box-shadow: none; }
-  .pricebar { margin: 10px 20px 0; padding: 10px 16px; border-radius: 12px; }
-  .pricebar strong { font-size: 24px; }
+  body { background: #fff; }
+  .fh { position: static; }
+  .cfg { display: block; height: auto; }
+  .cfg-stage { position: sticky; top: 0; z-index: 10; padding: 10px 12px 12px; }
+  .scene { border-radius: 14px; }
+  .scene svg { max-height: 40vh; margin: 0 auto; }
+  .stage-cap { display: none; }
+  .stepnav { padding: 8px 16px 0; }
+  .panel-body { padding: 22px 20px 120px; overflow: visible; }
+  .panel-foot { position: fixed; left: 0; right: 0; bottom: 0; z-index: 20; padding: 12px 20px calc(12px + env(safe-area-inset-bottom)); box-shadow: 0 -10px 30px rgba(11,34,51,.1); }
+  .panel-foot strong { font-size: 24px; }
 }
-@media (max-width: 1080px) { .top { position: static; } .stage { top: 0; } }
-@media (max-width: 900px) { .scene svg { max-height: 45vh; } }
-@media (max-width: 600px) { .scene svg { max-height: 34vh; } }
+@media (max-width: 600px) { .scene svg { max-height: 30vh; } .two { grid-template-columns: 1fr; } }
 </style>
 </head>
 <body>
-<header class="top">
-  <div class="wrap bar">
-    <a class="logo" href="/"><img src="/favicon.svg" alt="" width="34" height="34"><span>Pool Council<em>Approval</em></span></a>
-    <nav class="menu" aria-label="Main"><ul><li class="has-drop"><a class="drop-toggle" href="/#services">Services</a><ul class="drop"><li><a href="/pool-permits.html"><strong>Pool Permits</strong><small>New pools, in-ground and above-ground</small></a></li><li><a href="/spa-permits.html"><strong>Spa Permits</strong><small>Spas, hot tubs and swim spas</small></a></li><li><a href="/retrospective-pool-permits.html"><strong>Retrospective Permits</strong><small>Pools built without approval</small></a></li><li><a href="/pool-barrier-compliance.html"><strong>Barrier Compliance</strong><small>Pass your council fence inspection</small></a></li></ul></li><li><a href="/how-it-works.html">How It Works</a></li><li><a href="/faqs.html">FAQs</a></li><li><a href="/contact.html">Contact</a></li></ul></nav>
-    <a class="call" href="tel:+61400369865">0400 369 865</a>
+<header class="fh">
+  <div class="wrap fh-bar">
+    <a class="logo light" href="/"><img src="/favicon.svg" alt="" width="30" height="30"><span>Pool Council<em>Approval</em></span></a>
+    <nav class="fh-nav" aria-label="Pool packages"><a href="/pool-packages.html">Pool Packages</a><a href="/pool-builder.html" aria-current="page">Design Your Pool</a></nav>
+    <a class="fh-call" href="tel:+61400369865">0400 369 865</a>
   </div>
 </header>
-<main>
-<section class="pb-head">
-  <div class="wrap">
-    <p class="eyebrow">Stock tank pool packages</p>
-    <h1>Build Your Pool</h1>
-    <p>Pick your pool, fence, deck and garden. Watch it come together and see your price as you go. Every package includes council approval.</p>
-  </div>
-</section>
 
-<div class="wrap pb">
-  <div class="stage">
-    <div class="scene">
-<svg id="scene" viewBox="0 0 800 500" role="img" aria-label="Preview of your stock tank pool build">
+<main class="cfg">
+  <section class="cfg-stage" aria-label="Your pool">
+    <div class="stage-inner">
+      <div class="scene">
+<svg id="scene" viewBox="0 0 800 500" role="img" aria-label="Preview of your stock tank pool">
   <defs>
-    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#9fd3ee"/><stop offset="1" stop-color="#e8f5fb"/></linearGradient>
-    <linearGradient id="groundShade" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#000" stop-opacity=".14"/><stop offset=".5" stop-color="#000" stop-opacity="0"/></linearGradient>
-    <radialGradient id="water" cx=".45" cy=".35" r=".75"><stop offset="0" stop-color="#8fe0ee"/><stop offset=".55" stop-color="#34abc8"/><stop offset="1" stop-color="#156a88"/></radialGradient>
-    <linearGradient id="shade" x1="0" x2="1"><stop offset="0" stop-color="#000" stop-opacity=".38"/><stop offset=".3" stop-color="#000" stop-opacity="0"/><stop offset=".55" stop-color="#fff" stop-opacity=".16"/><stop offset=".8" stop-color="#000" stop-opacity=".05"/><stop offset="1" stop-color="#000" stop-opacity=".42"/></linearGradient>
-    <pattern id="ribs" width="16" height="10" patternUnits="userSpaceOnUse"><rect width="7" height="10" fill="#fff" opacity=".13"/><rect x="9" width="2" height="10" fill="#000" opacity=".13"/></pattern>
-    <pattern id="boards" width="10" height="8" patternUnits="userSpaceOnUse"><rect y="7" width="10" height="1" fill="#000" opacity=".2"/></pattern>
-    <pattern id="colorbond" width="22" height="10" patternUnits="userSpaceOnUse"><rect width="22" height="10" fill="#666c71"/><rect width="4" height="10" fill="#565b60"/></pattern>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#9fd0ea"/><stop offset=".75" stop-color="#e4f0f2"/><stop offset="1" stop-color="#f4eadb"/></linearGradient>
+    <radialGradient id="sun" cx="690" cy="70" r="260" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#fff8e1" stop-opacity=".95"/><stop offset=".25" stop-color="#fff3d1" stop-opacity=".45"/><stop offset="1" stop-color="#fff3d1" stop-opacity="0"/></radialGradient>
+    <radialGradient id="vignette" cx=".5" cy=".55" r=".75"><stop offset=".6" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#0b2233" stop-opacity=".22"/></radialGradient>
+    <linearGradient id="groundShade" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#000" stop-opacity=".16"/><stop offset=".45" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#fff" stop-opacity=".06"/></linearGradient>
+    <radialGradient id="water" cx=".42" cy=".3" r=".8"><stop offset="0" stop-color="#a6eef5"/><stop offset=".5" stop-color="#3fb6d0"/><stop offset="1" stop-color="#13627f"/></radialGradient>
+    <linearGradient id="shade" x1="0" x2="1"><stop offset="0" stop-color="#000" stop-opacity=".42"/><stop offset=".28" stop-color="#000" stop-opacity="0"/><stop offset=".52" stop-color="#fff" stop-opacity=".2"/><stop offset=".78" stop-color="#000" stop-opacity=".05"/><stop offset="1" stop-color="#000" stop-opacity=".45"/></linearGradient>
+    <linearGradient id="deckLight" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".18"/><stop offset="1" stop-color="#000" stop-opacity=".06"/></linearGradient>
+    <pattern id="ribs" width="16" height="10" patternUnits="userSpaceOnUse"><rect width="7" height="10" fill="#fff" opacity=".14"/><rect x="9" width="2" height="10" fill="#000" opacity=".14"/></pattern>
+    <pattern id="boards" width="10" height="7" patternUnits="userSpaceOnUse"><rect y="6" width="10" height="1" fill="#000" opacity=".22"/></pattern>
+    <pattern id="faceboards" width="10" height="10" patternUnits="userSpaceOnUse"><rect y="9" width="10" height="1" fill="#000" opacity=".18"/></pattern>
+    <pattern id="colorbond" width="22" height="10" patternUnits="userSpaceOnUse"><rect width="22" height="10" fill="#5f666b"/><rect width="4" height="10" fill="#525a5f"/><rect x="4" width="1" height="10" fill="#6d757a"/></pattern>
     <pattern id="vbars" width="11" height="10" patternUnits="userSpaceOnUse"><rect x="4" width="2.6" height="10" fill="#1c1e20"/></pattern>
-    <pattern id="blades" width="20" height="10" patternUnits="userSpaceOnUse"><rect width="14" height="10" fill="#9c6b3e"/><rect width="3" height="10" fill="#b8844f"/></pattern>
+    <pattern id="battens" width="17" height="10" patternUnits="userSpaceOnUse"><rect width="12" height="10" fill="#8d5c37"/><rect width="3" height="10" fill="#a8744a"/><rect x="11" width="1" height="10" fill="#5e3d24"/></pattern>
     <pattern id="glass" x="0" y="396" width="130" height="104" patternUnits="userSpaceOnUse">
-      <rect x="4" y="0" width="122" height="88" fill="#d9f0f7" fill-opacity=".38" stroke="#fff" stroke-opacity=".85" stroke-width="1.5"/>
-      <polygon points="20,0 44,0 14,88 4,88 4,40" fill="#fff" opacity=".22"/>
+      <rect x="4" y="0" width="122" height="88" fill="#dff3f8" fill-opacity=".34" stroke="#fff" stroke-opacity=".9" stroke-width="1.5"/>
+      <polygon points="20,0 46,0 16,88 4,88 4,40" fill="#fff" opacity=".24"/>
       <rect x="22" y="88" width="7" height="12" fill="#8e979c"/><rect x="101" y="88" width="7" height="12" fill="#8e979c"/>
     </pattern>
+    <radialGradient id="glow"><stop offset="0" stop-color="#ffe9a8" stop-opacity=".9"/><stop offset="1" stop-color="#ffe9a8" stop-opacity="0"/></radialGradient>
     <symbol id="grass" overflow="visible"><path d="M0 0L-9-26M0 0L-3-32M0 0L3-30M0 0L9-25M0 0L-14-16M0 0L14-17" stroke="#7d8a3a" stroke-width="2.4" stroke-linecap="round" fill="none"/></symbol>
     <symbol id="leaf" overflow="visible"><path d="M0 0C-14-18-10-44 0-56C10-44 14-18 0 0Z"/></symbol>
     <symbol id="tropic" overflow="visible"><use href="#leaf" transform="rotate(-48)"/><use href="#leaf" transform="rotate(-24)"/><use href="#leaf"/><use href="#leaf" transform="rotate(24)"/><use href="#leaf" transform="rotate(48)"/></symbol>
+    <symbol id="shrub" overflow="visible"><ellipse cx="0" cy="-14" rx="24" ry="16" fill="#6f8f5a"/><ellipse cx="-12" cy="-8" rx="14" ry="10" fill="#7f9f68"/><ellipse cx="12" cy="-6" rx="13" ry="9" fill="#5f7f4c"/></symbol>
+    <symbol id="lounger" overflow="visible"><path d="M0 0h58l6 10H4z" fill="#f2efe8"/><path d="M58 0l18-20 5 3-17 20z" fill="#e8e3d8"/><path d="M6 10v8M60 10v8" stroke="#555" stroke-width="2"/></symbol>
+    <symbol id="lamp" overflow="visible"><circle cy="-16" r="14" fill="url(#glow)"/><rect x="-1.5" y="-14" width="3" height="14" fill="#333"/><circle cy="-15" r="3" fill="#fff4cf"/></symbol>
   </defs>
 
-  <!-- Sky and back boundary -->
   <rect width="800" height="500" fill="url(#sky)"/>
-  <g fill="#fff" opacity=".85"><ellipse cx="140" cy="70" rx="62" ry="15"/><ellipse cx="178" cy="58" rx="38" ry="15"/><ellipse cx="610" cy="52" rx="72" ry="14"/><ellipse cx="652" cy="42" rx="36" ry="13"/></g>
-  <g fill="#86a872"><circle cx="300" cy="170" r="40"/><circle cx="350" cy="160" r="34"/><circle cx="520" cy="168" r="44"/><circle cx="740" cy="160" r="58"/></g>
+  <rect width="800" height="500" fill="url(#sun)"/>
+  <g fill="#fff" opacity=".8"><ellipse cx="140" cy="70" rx="62" ry="13"/><ellipse cx="178" cy="60" rx="36" ry="13"/><ellipse cx="420" cy="40" rx="50" ry="10"/></g>
+  <g fill="#8fae7b" opacity=".9"><circle cx="290" cy="172" r="40"/><circle cx="340" cy="160" r="34"/><circle cx="520" cy="168" r="44"/><circle cx="745" cy="160" r="58"/><circle cx="20" cy="170" r="40"/></g>
   <rect y="165" width="800" height="110" fill="url(#colorbond)"/>
-  <rect y="162" width="800" height="5" fill="#4d5256"/>
+  <rect y="162" width="800" height="5" fill="#4a5155"/>
 
-  <!-- Ground, changes with landscaping -->
-  <rect y="270" width="800" height="230" style="fill:var(--ground)"/>
-  <rect y="270" width="800" height="28" style="fill:var(--bed)"/>
+  <!-- Ground and garden beds -->
+  <rect y="270" width="800" height="230" fill="#86b257"/>
+  <rect y="270" width="800" height="28" fill="#7a5a40" data-show="land:basic"/>
+  <rect y="270" width="800" height="40" fill="#6e4f37" data-show="land:plus,premium"/>
   <rect y="270" width="800" height="230" fill="url(#groundShade)"/>
 
-  <!-- Landscaping -->
-  <g data-show="land:native">
-    <path d="M78 296C82 240 70 200 92 140" stroke="#e8dfcf" stroke-width="11" fill="none" stroke-linecap="round"/>
-    <path d="M86 210L120 176M84 236L56 204" stroke="#e8dfcf" stroke-width="6" stroke-linecap="round"/>
-    <g fill="#7d9563"><ellipse cx="96" cy="128" rx="58" ry="34"/><ellipse cx="52" cy="160" rx="40" ry="24"/><ellipse cx="132" cy="166" rx="40" ry="22"/></g>
-    <g><use href="#grass" x="190" y="294"/><use href="#grass" x="240" y="296"/><use href="#grass" x="300" y="292"/><use href="#grass" x="640" y="294"/><use href="#grass" x="700" y="296"/><use href="#grass" x="760" y="292"/></g>
-    <g fill="#9b9690"><ellipse cx="215" cy="296" rx="14" ry="7"/><ellipse cx="672" cy="297" rx="12" ry="6"/></g>
+  <!-- Native garden (all levels) -->
+  <g>
+    <use href="#grass" x="190" y="294"/><use href="#grass" x="250" y="296"/><use href="#grass" x="320" y="293"/><use href="#grass" x="620" y="294"/><use href="#grass" x="690" y="296"/><use href="#grass" x="760" y="293"/>
+    <g fill="#a29d95"><ellipse cx="220" cy="296" rx="13" ry="6"/><ellipse cx="660" cy="297" rx="11" ry="5"/></g>
   </g>
-  <g data-show="land:tropical">
-    <path d="M70 296Q60 220 98 140" stroke="#8d6b4a" stroke-width="10" fill="none" stroke-linecap="round"/>
-    <g fill="#3f8a45"><use href="#tropic" transform="translate(98 142) rotate(-70) scale(1.5)"/><use href="#tropic" transform="translate(98 142) rotate(70) scale(1.5)"/></g>
-    <g fill="#2f6b3a"><use href="#tropic" x="200" y="296"/><use href="#tropic" x="270" y="298"/><use href="#tropic" x="650" y="296"/><use href="#tropic" x="730" y="298"/></g>
-    <g fill="#e9603a"><circle cx="208" cy="246" r="5"/><circle cx="738" cy="248" r="5"/></g>
+  <!-- Garden Plus and up -->
+  <g data-show="land:plus,premium">
+    <use href="#shrub" x="60" y="306"/><use href="#shrub" x="150" y="308"/><use href="#shrub" x="560" y="306"/><use href="#shrub" x="730" y="308"/>
+    <g fill="#3f7d45"><use href="#tropic" x="280" y="306"/></g>
+    <g fill="#e07a5f"><circle cx="138" cy="290" r="4"/><circle cx="160" cy="294" r="4"/><circle cx="572" cy="290" r="4"/><circle cx="742" cy="292" r="4"/></g>
   </g>
-  <g data-show="land:coastal">
-    <g fill="#9fb39a"><ellipse cx="60" cy="282" rx="40" ry="26"/><ellipse cx="130" cy="288" rx="32" ry="20"/><ellipse cx="690" cy="282" rx="38" ry="25"/><ellipse cx="755" cy="288" rx="30" ry="19"/></g>
-    <g fill="#b9c8b2"><ellipse cx="90" cy="290" rx="24" ry="14"/><ellipse cx="722" cy="292" rx="22" ry="13"/></g>
-    <g fill="#f4f1ea" stroke="#d6cfc1"><path d="M220 262h46l-6 38h-34z"/><path d="M590 266h38l-5 32h-28z"/></g>
-    <g><use href="#grass" x="243" y="262"/><use href="#grass" x="609" y="266"/></g>
+  <!-- Resort garden -->
+  <g data-show="land:premium">
+    <path d="M70 308C76 250 64 205 88 140" stroke="#ece4d6" stroke-width="12" fill="none" stroke-linecap="round"/>
+    <path d="M82 212L118 176M80 238L50 206" stroke="#ece4d6" stroke-width="6" stroke-linecap="round"/>
+    <g fill="#7a9561"><ellipse cx="92" cy="126" rx="62" ry="34"/><ellipse cx="44" cy="160" rx="42" ry="24"/><ellipse cx="132" cy="162" rx="42" ry="22"/></g>
+    <use href="#lamp" x="40" y="318"/><use href="#lamp" x="330" y="318"/><use href="#lamp" x="600" y="318"/><use href="#lamp" x="780" y="318"/>
   </g>
 
   <!-- Deck -->
-  <g data-show="deck:half">
+  <g data-show="deckSize:small">
     <polygon points="175,300 480,300 480,356 140,356" style="fill:var(--deck-top)"/>
     <polygon points="175,300 480,300 480,356 140,356" fill="url(#boards)"/>
+    <polygon points="175,300 480,300 480,356 140,356" fill="url(#deckLight)"/>
     <rect x="140" y="356" width="340" height="40" style="fill:var(--deck-face)"/>
+    <rect x="140" y="356" width="340" height="40" fill="url(#faceboards)"/>
     <rect x="190" y="396" width="110" height="14" style="fill:var(--deck-top)"/>
+    <rect x="190" y="408" width="110" height="3" fill="#000" opacity=".15"/>
   </g>
-  <g data-show="deck:wrap">
-    <polygon points="130,298 770,298 790,356 110,356" style="fill:var(--deck-top)"/>
-    <polygon points="130,298 770,298 790,356 110,356" fill="url(#boards)"/>
-    <rect x="110" y="356" width="680" height="40" style="fill:var(--deck-face)"/>
-    <rect x="170" y="396" width="120" height="14" style="fill:var(--deck-top)"/>
+  <g data-show="deckSize:large">
+    <polygon points="120,296 780,296 800,358 96,358" style="fill:var(--deck-top)"/>
+    <polygon points="120,296 780,296 800,358 96,358" fill="url(#boards)"/>
+    <polygon points="120,296 780,296 800,358 96,358" fill="url(#deckLight)"/>
+    <rect x="96" y="358" width="704" height="40" style="fill:var(--deck-face)"/>
+    <rect x="96" y="358" width="704" height="40" fill="url(#faceboards)"/>
+    <rect x="170" y="398" width="120" height="14" style="fill:var(--deck-top)"/>
+    <rect x="170" y="410" width="120" height="3" fill="#000" opacity=".15"/>
+    <use href="#lounger" x="652" y="322"/><use href="#lounger" x="660" y="340"/>
+    <g><path d="M232 292v-62" stroke="#666" stroke-width="2.5"/><path d="M182 236q50-36 100 0z" fill="#f4efe6"/><path d="M182 236q50-36 100 0" fill="none" stroke="#d9d0c0"/></g>
   </g>
 
-  <!-- The pool (resized for the smaller tank) -->
+  <!-- Stepping stones (resort garden) -->
+  <g data-show="land:premium" fill="#e9e2d5" stroke="#d2c8b6"><ellipse cx="80" cy="478" rx="34" ry="10"/><ellipse cx="118" cy="452" rx="30" ry="9"/><ellipse cx="150" cy="430" rx="27" ry="8"/></g>
+
+  <!-- Pool -->
   <g id="pool">
-    <ellipse cx="478" cy="404" rx="168" ry="44" fill="#000" opacity=".2"/>
+    <ellipse cx="480" cy="406" rx="172" ry="44" fill="#0b2233" opacity=".22"/>
     <g style="fill:var(--tank)"><rect x="320" y="290" width="300" height="110"/><ellipse cx="470" cy="400" rx="150" ry="42"/></g>
     <g fill="url(#ribs)"><rect x="320" y="290" width="300" height="110"/><path d="M320 400A150 42 0 0 0 620 400Z"/></g>
     <g fill="url(#shade)"><rect x="320" y="290" width="300" height="110"/><path d="M320 400A150 42 0 0 0 620 400Z"/></g>
-    <ellipse cx="470" cy="290" rx="150" ry="42" style="fill:var(--tank)" stroke="#000" stroke-opacity=".25" stroke-width="3"/>
-    <ellipse cx="470" cy="290" rx="150" ry="42" fill="#fff" opacity=".18"/>
+    <ellipse cx="470" cy="290" rx="150" ry="42" style="fill:var(--tank)" stroke="#000" stroke-opacity=".28" stroke-width="3"/>
+    <ellipse cx="470" cy="290" rx="150" ry="42" fill="#fff" opacity=".2"/>
     <ellipse cx="470" cy="294" rx="140" ry="35" fill="url(#water)"/>
-    <g fill="none" stroke="#fff" stroke-opacity=".6" stroke-width="2" stroke-linecap="round"><path d="M400 284q20-6 40 0"/><path d="M492 300q18-5 36 0"/><path d="M430 312q14-4 28 0"/></g>
+    <path d="M332 292a138 33 0 0 1 276 0" fill="none" stroke="#0b4a60" stroke-opacity=".25" stroke-width="5"/>
+    <g fill="none" stroke="#fff" stroke-opacity=".65" stroke-width="2" stroke-linecap="round"><path d="M400 286q20-6 40 0"/><path d="M492 302q18-5 36 0"/><path d="M430 313q14-4 28 0"/></g>
   </g>
 
   <!-- Pool fence -->
@@ -182,186 +198,168 @@
     <rect y="402" width="800" height="88" fill="url(#vbars)"/>
     <g fill="#1c1e20"><rect y="400" width="800" height="5"/><rect y="478" width="800" height="5"/><rect x="0" y="396" width="7" height="100"/><rect x="200" y="396" width="7" height="100"/><rect x="400" y="396" width="7" height="100"/><rect x="600" y="396" width="7" height="100"/><rect x="793" y="396" width="7" height="100"/></g>
   </g>
+  <g data-show="fence:slat">
+    <rect y="404" width="800" height="92" fill="url(#battens)"/>
+    <rect y="400" width="800" height="5" fill="#2a2a2a"/>
+  </g>
   <g data-show="fence:glass">
     <rect y="396" width="800" height="104" fill="url(#glass)"/>
   </g>
-  <g data-show="fence:timber">
-    <rect y="404" width="800" height="90" fill="url(#blades)"/>
-    <rect y="400" width="800" height="6" fill="#6b4a2b"/>
-  </g>
+  <rect width="800" height="500" fill="url(#vignette)" pointer-events="none"/>
 </svg>
+      </div>
+      <ul class="stage-cap" id="cap"></ul>
     </div>
-    <div class="pricebar">
-      <div><small>Your build (inc. GST)</small><strong id="total">$0</strong></div>
-      <a class="btn" href="#quote">Get this quote</a>
-    </div>
-  </div>
+  </section>
 
-  <form id="builder">
-    <fieldset class="step"><legend><span>STEP 1</span>Choose your package</legend><div class="choices" data-key="package"></div></fieldset>
-    <fieldset class="step"><legend><span>STEP 2</span>Pool colour</legend><div class="choices" data-key="finish"></div></fieldset>
-    <fieldset class="step"><legend><span>STEP 3</span>Pool fence</legend><div class="choices" data-key="fence"></div></fieldset>
-    <fieldset class="step"><legend><span>STEP 4</span>Deck</legend><div class="choices" data-key="deck"></div></fieldset>
-    <fieldset class="step"><legend><span>STEP 5</span>Garden style</legend><div class="choices" data-key="land"></div></fieldset>
-    <fieldset class="step"><legend><span>STEP 6</span>Extras</legend><div class="choices" data-key="extras"></div></fieldset>
-  </form>
-</div>
-
-<section class="summary" id="quote">
-  <div class="wrap feature">
-    <div>
-      <p class="eyebrow">Your build</p>
-      <h2>Here's your pool</h2>
-      <ul id="lines"></ul>
-      <p class="total"><span>Total</span><span id="total2">$0</span></p>
-      <p class="note">Prices include GST and are a guide. We confirm your final price after a quick site visit. Want to show someone? <button type="button" class="linkbtn" id="share">Copy a link to this build</button></p>
+  <section class="cfg-panel">
+    <ol class="stepnav" id="stepnav"></ol>
+    <div class="panel-body" id="panel"></div>
+    <div class="panel-foot">
+      <div><small>TOTAL, INSTALLED, INC. GST</small><strong id="total">$20,000</strong></div>
+      <button class="btn" id="next" type="button">Next</button>
     </div>
-    <form class="form" action="https://formsubmit.co/info@poolcouncilapproval.com.au" method="POST">
-      <input type="hidden" name="_subject" value="New pool build quote request">
-      <input type="hidden" name="_captcha" value="false">
-      <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
-      <input type="hidden" name="build" id="buildField">
-      <input type="hidden" name="build_link" id="linkField">
-      <label>Your name <input name="name" required autocomplete="name"></label>
-      <label>Phone <input name="phone" type="tel" required autocomplete="tel"></label>
-      <label>Email <input name="email" type="email" required autocomplete="email"></label>
-      <label>Property suburb <input name="suburb" required></label>
-      <label>Anything else? <textarea name="message" rows="3"></textarea></label>
-      <button class="btn" type="submit">Send me this quote</button>
-    </form>
-  </div>
-</section>
+  </section>
 </main>
-<footer>
-  <div class="wrap cols">
-    <div><a class="logo light" href="/"><img src="/favicon.svg" alt="" width="34" height="34"><span>Pool Council<em>Approval</em></span></a><p>Pool and spa council approval specialists across Perth and regional Western Australia.</p></div>
-    <div><strong>Services</strong><ul>
-      <li><a href="/pool-permits.html">Pool building permits</a></li>
-      <li><a href="/spa-permits.html">Spa building permits</a></li>
-      <li><a href="/retrospective-pool-permits.html">Retrospective pool permits</a></li>
-      <li><a href="/pool-barrier-compliance.html">Pool barrier compliance</a></li>
-    </ul></div>
-    <div><strong>Contact</strong><ul>
-      <li><a href="tel:+61400369865">0400 369 865</a></li>
-      <li><a href="mailto:info@poolcouncilapproval.com.au">info@poolcouncilapproval.com.au</a></li>
-      <li><a href="/faqs.html">FAQs</a></li>
-    </ul></div>
-  </div>
-  <p class="wrap small">© 2026 Pool Council Approval. General information only. Rules can change, so always confirm with your building surveyor or council.</p>
-</footer>
+
+<script src="/js/packages.js"></script>
 <script>
-// ===== Edit packages, options and prices here =====
-// price is added on top of the package. 0 shows as "Included".
-var OPTIONS = {
-  package: [
-    { id: "urban",  name: "Urban Plunge 1.8m",  note: "Fits small courtyards. Seats 2 to 3. Fence, deck, garden and council approval included.", price: 20000, size: 0.78 },
-    { id: "family", name: "Family Plunge 2.4m", note: "Our most popular. Seats up to 5. Fence, deck, garden and council approval included.", price: 22000, size: 1 }
-  ],
-  finish: [
-    { id: "galv",       name: "Classic galvanised", price: 0,   color: "#b9c2c7" },
-    { id: "black",      name: "Matte black",        price: 850, color: "#2e3033" },
-    { id: "white",      name: "Matte white",        price: 850, color: "#ecebe6" },
-    { id: "olive",      name: "Olive green",        price: 850, color: "#6b7350" },
-    { id: "terracotta", name: "Terracotta",         price: 850, color: "#b5643f" }
-  ],
-  fence: [
-    { id: "vertibar", name: "Black Vertibar aluminium", note: "Tough, low cost and pool-safe.", price: 0 },
-    { id: "timber",   name: "Timber-look aluminium slats", note: "Warm timber look, no upkeep.", price: 2200 },
-    { id: "glass",    name: "Frameless glass", note: "Clear views, premium finish.", price: 4500 }
-  ],
-  deck: [
-    { id: "merbau",    name: "Merbau half deck", note: "Timber deck around half the pool.", price: 0, shape: "half", top: "#9a5a3a", face: "#6e3d26" },
-    { id: "composite", name: "Composite half deck", note: "Grey, low-maintenance boards.", price: 1800, shape: "half", top: "#8f8b85", face: "#66625d" },
-    { id: "wrap",      name: "Merbau wrap-around deck", note: "Bigger deck with room for loungers.", price: 4500, shape: "wrap", top: "#9a5a3a", face: "#6e3d26" }
-  ],
-  land: [
-    { id: "native",   name: "WA native", note: "Gum tree, native grasses and crushed gravel.", price: 0, ground: "#d2bf96", bed: "#8a6b4b" },
-    { id: "tropical", name: "Lush tropical", note: "Palm, big leafy plants and lawn.", price: 0, ground: "#7cae4a", bed: "#5b3e2b" },
-    { id: "coastal",  name: "Coastal", note: "Silver shrubs, white pebbles and pots.", price: 0, ground: "#ebe5d6", bed: "#d8d0bd" }
-  ],
-  extras: [
-    { id: "heat",  name: "Heat pump", note: "Swim all year round.", price: 2750 },
-    { id: "cover", name: "Hard-shell cover", note: "Keeps leaves out and heat in.", price: 875 },
-    { id: "bench", name: "Bench seat", note: "Sit and soak.", price: 295 }
-  ]
-};
-// ===================================================
+var STEPS = [
+  { id: "size",   label: "Pool",   title: "Choose your pool", sub: "A genuine Tarter USA galvanised stock tank from Terra Tanks. Both sizes are the same package price." },
+  { id: "finish", label: "Colour", title: "Pick your colour", sub: "Colour coating is applied by Terra Tanks and charged at their price." },
+  { id: "fence",  label: "Fence",  title: "Choose your pool fence", sub: "10 metres of compliant pool fence and a self-closing gate are included. We confirm the exact length at your free site visit." },
+  { id: "deck",   label: "Deck",   title: "Design your deck", sub: "Built by a local carpenter around your pool." },
+  { id: "land",   label: "Garden", title: "Choose your garden", sub: "Planted and finished by a local landscaper, so it looks great from day one." },
+  { id: "extras", label: "Extras", title: "Add extras", sub: "Optional. Charged at Terra Tanks' own prices." },
+  { id: "quote",  label: "Quote",  title: "Your quote", sub: "Every dollar, no surprises. Send it to yourself and we'll be in touch to book a free site visit." }
+];
 
-var money = new Intl.NumberFormat("en-AU", { style: "currency", currency: "AUD", maximumFractionDigits: 0 });
+var state = PKG.fromHash(location.hash);
+var step = 0;
 var scene = document.getElementById("scene");
-var form = document.getElementById("builder");
-var buildLink = "";
+var panel = document.getElementById("panel");
+var nextBtn = document.getElementById("next");
 
-// Draw the option cards
-Object.keys(OPTIONS).forEach(function (key) {
-  var box = document.querySelector('[data-key="' + key + '"]');
-  var multi = key === "extras";
-  box.innerHTML = OPTIONS[key].map(function (o, i) {
-    var price = key === "package" ? money.format(o.price) : o.price ? "+" + money.format(o.price) : "Included";
-    var mark = o.color ? '<span class="swatch" style="background:' + o.color + '"></span>' : '<span class="tick">✓</span>';
-    return '<label class="opt"><input type="' + (multi ? "checkbox" : "radio") + '" name="' + key + '" value="' + o.id + '"' + (!multi && i === 0 ? " checked" : "") + '>' +
-      mark + '<span><b>' + o.name + '</b>' + (o.note ? '<small>' + o.note + '</small>' : '') + '</span>' +
-      '<em class="' + (price === "Included" ? "inc" : "") + '">' + price + '</em></label>';
-  }).join("");
-});
-
-function pick(key) {
-  var v = form.querySelector('input[name="' + key + '"]:checked').value;
-  return OPTIONS[key].find(function (o) { return o.id === v; });
+function thumb(key, id) {
+  return ["size", "fence", "deckSize", "deckMat", "land"].indexOf(key) > -1
+    ? '<img class="thumb" src="/images/pkg/' + key + '-' + id + '.jpg" alt="" width="240" height="150" loading="lazy">' : "";
 }
 
-function update() {
-  var p = pick("package"), f = pick("finish"), fe = pick("fence"), d = pick("deck"), l = pick("land");
-  var extras = OPTIONS.extras.filter(function (o) { return form.querySelector('input[value="' + o.id + '"]').checked; });
+function options(key, priceOf) {
+  var multi = key === "extras";
+  return '<div class="opts">' + PKG[key].map(function (o) {
+    var checked = multi ? state.extras.indexOf(o.id) > -1 : state[key] === o.id;
+    var price = priceOf ? priceOf(o) : o.price;
+    var mark = o.color ? '<span class="swatch" style="background:' + o.color + '"></span>' : thumb(key, o.id) || '<span class="tick">✓</span>';
+    return '<label class="opt' + (o.color ? " sw" : "") + '"><input type="' + (multi ? "checkbox" : "radio") + '" name="' + key + '" value="' + o.id + '"' + (checked ? " checked" : "") + '>' +
+      mark + '<span class="opt-text"><b>' + o.name + '</b>' + (o.note ? '<small>' + o.note + '</small>' : '') + '</span>' +
+      '<em class="' + (price ? "" : "inc") + '">' + PKG.priceText(price) + '</em></label>';
+  }).join("") + '</div>';
+}
 
-  // Update the picture
-  scene.style.setProperty("--tank", f.color);
-  scene.style.setProperty("--deck-top", d.top);
-  scene.style.setProperty("--deck-face", d.face);
-  scene.style.setProperty("--ground", l.ground);
-  scene.style.setProperty("--bed", l.bed);
-  document.getElementById("pool").setAttribute("transform", "translate(470 400) scale(" + p.size + ") translate(-470 -400)");
-  var show = { deck: d.shape, land: l.id, fence: fe.id };
+function renderStep() {
+  var s = STEPS[step];
+  var html = (step ? '<button class="back" type="button" id="back">← Back</button>' : "") +
+    '<h1>' + s.title + '</h1><p class="sub">' + s.sub + '</p>';
+  if (s.id === "deck") {
+    html += '<h2>Size</h2>' + options("deckSize", function (o) { return PKG.deckPrice[o.id][state.deckMat]; });
+    html += '<h2>Boards</h2>' + options("deckMat", function (o) { return PKG.deckPrice[state.deckSize][o.id] - PKG.deckPrice[state.deckSize].composite; });
+  } else if (s.id === "quote") {
+    var q = PKG.quote(state);
+    html += '<ul class="quote-lines">' + q.lines.map(function (l, i) {
+      return '<li><span>' + l.label + '<small>' + l.detail + '</small></span><span>' + (i ? PKG.priceText(l.price) : PKG.money(l.price)) + '</span></li>';
+    }).join("") + '</ul><p class="quote-total"><span>Total</span><span>' + PKG.money(q.total) + '</span></p>' +
+      '<p class="fine">Includes GST. Perth metro. No payment today. We confirm your yard, fence length and final price at a free site visit. <button type="button" class="linkbtn" id="share">Copy a link to this design</button></p>' +
+      '<form class="qform" id="qform" action="https://formsubmit.co/rossdelport1998@gmail.com" method="POST">' +
+      '<input type="hidden" name="_template" value="table"><input type="hidden" name="_subject" id="f-subject">' +
+      '<input type="hidden" name="_next" id="f-next"><input type="hidden" name="_autoresponse" id="f-auto">' +
+      '<input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">' +
+      '<input type="hidden" name="quote_number" id="f-num"><input type="hidden" name="quote" id="f-quote"><input type="hidden" name="total" id="f-total"><input type="hidden" name="design_link" id="f-link">' +
+      '<div class="two"><label>Your name <input name="name" required autocomplete="name"></label><label>Phone <input name="phone" type="tel" required autocomplete="tel"></label></div>' +
+      '<div class="two"><label>Email <input name="email" type="email" required autocomplete="email"></label><label>Suburb <input name="suburb" required autocomplete="address-level2"></label></div>' +
+      '<label>Anything we should know? <textarea name="notes" rows="2" placeholder="Slope, access, timing..."></textarea></label>' +
+      '<button class="btn" type="submit">Send me this quote</button></form>';
+  } else {
+    html += options(s.id);
+  }
+  panel.innerHTML = html;
+  panel.scrollTop = 0;
+
+  // Step tabs
+  document.getElementById("stepnav").innerHTML = STEPS.map(function (t, i) {
+    return '<li><button type="button" data-step="' + i + '"' + (i === step ? ' aria-current="step"' : '') + (i < step ? ' class="done"' : '') + '><b>' + (i + 1) + '</b>' + t.label + '</button></li>';
+  }).join("");
+  var cur = document.querySelector(".stepnav [aria-current]");
+  cur.parentNode.parentNode.scrollLeft = cur.offsetLeft - 40;
+  nextBtn.style.display = s.id === "quote" ? "none" : "";
+  if (s.id !== "quote") nextBtn.textContent = s.id === "extras" ? "See my quote" : "Next: " + STEPS[step + 1].label;
+  var back = document.getElementById("back");
+  if (back) back.onclick = function () { go(step - 1); };
+  if (s.id === "quote") setupQuote();
+}
+
+function go(i) {
+  step = Math.max(0, Math.min(STEPS.length - 1, i));
+  renderStep();
+  if (window.innerWidth <= 900) window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+function draw() {
+  var size = PKG.find("size", state.size), finish = PKG.find("finish", state.finish), mat = PKG.find("deckMat", state.deckMat);
+  scene.style.setProperty("--tank", finish.color);
+  scene.style.setProperty("--deck-top", mat.top);
+  scene.style.setProperty("--deck-face", mat.face);
+  document.getElementById("pool").setAttribute("transform", "translate(470 400) scale(" + size.scale + ") translate(-470 -400)");
   scene.querySelectorAll("[data-show]").forEach(function (g) {
     var kv = g.getAttribute("data-show").split(":");
-    g.style.display = show[kv[0]] === kv[1] ? "" : "none";
+    g.style.display = kv[1].split(",").indexOf(state[kv[0]]) > -1 ? "" : "none";
   });
-
-  // Update the price and summary
-  var items = [p, f, fe, d, l].concat(extras);
-  var total = items.reduce(function (sum, o) { return sum + o.price; }, 0);
-  document.getElementById("total").textContent = money.format(total);
-  document.getElementById("total2").textContent = money.format(total);
-  document.getElementById("lines").innerHTML = items.map(function (o, i) {
-    return "<li><span>" + o.name + "</span><span>" + (i === 0 ? money.format(o.price) : o.price ? "+" + money.format(o.price) : "Included") + "</span></li>";
-  }).join("");
-  document.getElementById("buildField").value = items.map(function (o) { return o.name; }).join(", ") + ". Total " + money.format(total);
-
-  // Save choices in the address so the build can be shared
-  var hash = [p.id, f.id, fe.id, d.id, l.id, extras.map(function (o) { return o.id; }).join("+")].join("/");
-  buildLink = location.origin + location.pathname + "#" + hash;
-  history.replaceState(null, "", "#" + hash);
-  document.getElementById("linkField").value = buildLink;
+  document.getElementById("total").textContent = PKG.money(PKG.quote(state).total);
+  document.getElementById("cap").innerHTML = [size.name, finish.name, PKG.find("fence", state.fence).name, PKG.find("deckSize", state.deckSize).name + " " + mat.name.toLowerCase(), PKG.find("land", state.land).name]
+    .map(function (t) { return "<li>" + t + "</li>"; }).join("");
+  history.replaceState(null, "", "#" + PKG.toHash(state));
 }
 
-// Load a shared build from the address
-var saved = location.hash.slice(1).split("/");
-["package", "finish", "fence", "deck", "land"].forEach(function (key, i) {
-  var input = saved[i] && form.querySelector('input[name="' + key + '"][value="' + saved[i] + '"]');
-  if (input) input.checked = true;
-});
-(saved[5] || "").split("+").forEach(function (id) {
-  var input = id && form.querySelector('input[name="extras"][value="' + id + '"]');
-  if (input) input.checked = true;
-});
+function link() { return location.origin + "/pool-builder.html#" + PKG.toHash(state); }
 
-form.addEventListener("change", update);
-update();
+function setupQuote() {
+  var q = PKG.quote(state);
+  var num = "PCA-" + Date.now().toString(36).toUpperCase().slice(-6);
+  var text = q.lines.map(function (l, i) { return l.label + ": " + (i ? PKG.priceText(l.price) : PKG.money(l.price)); }).join("\n");
+  document.getElementById("f-num").value = num;
+  document.getElementById("f-quote").value = text;
+  document.getElementById("f-total").value = PKG.money(q.total) + " inc. GST";
+  document.getElementById("f-link").value = link();
+  document.getElementById("f-subject").value = "Pool quote " + num + ": " + PKG.money(q.total);
+  document.getElementById("f-next").value = location.origin + "/quote-sent.html?n=" + num + "#" + PKG.toHash(state);
+  document.getElementById("f-auto").value = "Thanks for designing your pool with us! Here is your quote " + num + ":\n\n" + text +
+    "\n\nTotal: " + PKG.money(q.total) + " inc. GST\n\nView or change your design: " + link() +
+    "\n\nWe'll call you within one business day to book a free site visit. Questions? Call Ross on 0400 369 865.";
+  document.getElementById("share").onclick = function () {
+    var b = this;
+    navigator.clipboard.writeText(link()).then(function () { b.textContent = "Link copied!"; });
+  };
+}
 
-document.getElementById("share").addEventListener("click", function () {
-  var btn = this;
-  navigator.clipboard.writeText(buildLink).then(function () { btn.textContent = "Link copied!"; });
+panel.addEventListener("change", function (e) {
+  var t = e.target;
+  if (t.name === "extras") {
+    state.extras = [].slice.call(panel.querySelectorAll('input[name="extras"]:checked')).map(function (i) { return i.value; });
+  } else if (PKG.KEYS.indexOf(t.name) > -1) {
+    state[t.name] = t.value;
+  } else return;
+  draw();
+  if (STEPS[step].id === "deck") { var y = panel.scrollTop; renderStep(); panel.scrollTop = y; }
 });
+document.getElementById("stepnav").addEventListener("click", function (e) {
+  var b = e.target.closest("button");
+  if (b) go(+b.getAttribute("data-step"));
+});
+nextBtn.addEventListener("click", function () { go(step + 1); });
+
+if (/[?&]step=quote/.test(location.search)) step = STEPS.length - 1;
+draw();
+renderStep();
 </script>
 </body>
 </html>

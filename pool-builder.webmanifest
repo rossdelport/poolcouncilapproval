@@ -1,6 +1,6 @@
 {
-  "name": "Build Your Pool",
-  "short_name": "Pool Builder",
+  "name": "Pool Designer",
+  "short_name": "Pool Designer",
   "start_url": "/pool-builder.html",
   "display": "standalone",
   "background_color": "#ffffff",
