@@ -309,6 +309,16 @@ addEventListener("load", function () {
   }, 1500);
 });
 
+// Desktop: size the options box to fill the screen under the title, so it scrolls from the top
+function fitGrid() {
+  var g = document.querySelector(".buy-grid");
+  if (innerWidth <= 900) { g.style.height = ""; return; }
+  var top = g.getBoundingClientRect().top + scrollY;
+  g.style.height = Math.max(420, innerHeight - top - $("bag").offsetHeight - 24) + "px";
+}
+addEventListener("resize", fitGrid);
+fitGrid();
+
 update();
 </script>
 </body>

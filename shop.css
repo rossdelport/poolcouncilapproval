@@ -68,6 +68,11 @@ h1, h2, h3 { font-weight: 600; letter-spacing: -0.025em; line-height: 1.1; margi
 .sec h2 b { color: var(--ink); font-weight: 600; }
 .glabel { font-size: 15px; font-weight: 600; margin: 28px 0 12px; }
 .tiles { display: grid; gap: 12px; }
+/* Desktop: the title and photo stay still and only the options list scrolls */
+@media (min-width: 901px) {
+  .gallery { position: static; }
+  .config { height: 100%; overflow-y: auto; padding-right: 10px; }
+}
 .config :is(h2, h3, input) { scroll-margin: 72px 0 100px; } /* keeps focused options clear of the header and footer bar */
 
 /* Option box: name and note on the left, price inside on the right */
