@@ -5,7 +5,6 @@
 var PKG = {
   base: 20000,
   size: [
-    { id: "urban",  name: "Urban Plunge 1.8m",  note: "Fits courtyards and small yards. Seats 2 to 3.", price: 0, scale: 0.8 },
     { id: "family", name: "Family Plunge 2.4m", note: "Our most popular size. Seats up to 5.", price: 0, scale: 1 }
   ],
   finish: [
@@ -55,10 +54,10 @@ PKG.find = function (key, id) {
 };
 
 PKG.defaults = function () {
-  return { size: "urban", finish: "galv", fence: "vertibar", deckSize: "small", deckMat: "composite", land: "basic", extras: [] };
+  return { size: "family", finish: "galv", fence: "vertibar", deckSize: "small", deckMat: "composite", land: "basic", extras: [] };
 };
 
-// Turn a build into "urban/galv/vertibar/small/composite/basic/heat+cover" and back
+// Turn a build into "family/galv/vertibar/small/composite/basic/heat+cover" and back
 PKG.KEYS = ["size", "finish", "fence", "deckSize", "deckMat", "land"];
 PKG.toHash = function (s) {
   return PKG.KEYS.map(function (k) { return s[k]; }).concat(s.extras.join("+")).join("/");
@@ -109,7 +108,7 @@ PKG.photos = function (s) {
 
 // Each photo comes in two sizes (900 and 1400 wide). Phones get the small one, so photos load fast.
 PKG.img = function (img, name, sizes) {
-  img.sizes = sizes || "(max-width: 600px) 300px, 760px";
+  img.sizes = sizes || "(max-width: 600px) 300px, 960px";
   img.srcset = "/images/pool/" + name + "-sm.webp 900w, /images/pool/" + name + ".webp 1400w";
   img.src = "/images/pool/" + name + ".webp";
 };
