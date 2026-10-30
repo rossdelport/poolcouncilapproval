@@ -25,7 +25,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
-<link rel="preload" as="image" href="/images/pool/s-vertibar-small-composite-galv.webp" imagesrcset="/images/pool/s-vertibar-small-composite-galv-sm.webp 900w, /images/pool/s-vertibar-small-composite-galv.webp 1400w" imagesizes="(max-width: 600px) 300px, 960px" fetchpriority="high">
+<link rel="preload" as="image" href="/images/pool/s-vertibar-small-moonlight-galv.webp" imagesrcset="/images/pool/s-vertibar-small-moonlight-galv-sm.webp 900w, /images/pool/s-vertibar-small-moonlight-galv.webp 1400w" imagesizes="(max-width: 600px) 300px, 960px" fetchpriority="high">
 <link rel="stylesheet" href="/shop.css?v=4">
 </head>
 <body>
@@ -48,7 +48,7 @@
     <!-- The big photo. It changes as options are picked. -->
     <div class="gallery">
       <div class="frame">
-        <img id="photo-a" class="on" src="/images/pool/s-vertibar-small-composite-galv.webp" srcset="/images/pool/s-vertibar-small-composite-galv-sm.webp 900w, /images/pool/s-vertibar-small-composite-galv.webp 1400w" sizes="(max-width: 600px) 300px, 960px" alt="" width="1400" height="781" fetchpriority="high">
+        <img id="photo-a" class="on" src="/images/pool/s-vertibar-small-moonlight-galv.webp" srcset="/images/pool/s-vertibar-small-moonlight-galv-sm.webp 900w, /images/pool/s-vertibar-small-moonlight-galv.webp 1400w" sizes="(max-width: 600px) 300px, 960px" alt="" width="1400" height="781" fetchpriority="high">
         <img id="photo-b" alt="" width="1400" height="781">
         <span class="badge" id="badge" hidden></span>
       </div>
@@ -106,7 +106,7 @@
     <div class="aw co-grid">
       <div class="co-sum">
         <h2>Your new pool.</h2>
-        <img class="co-photo" id="co-photo" src="/images/pool/s-vertibar-small-composite-galv-sm.webp" alt="" width="900" height="502" loading="lazy">
+        <img class="co-photo" id="co-photo" src="/images/pool/s-vertibar-small-moonlight-galv-sm.webp" alt="" width="900" height="502" loading="lazy">
         <ul class="lines" id="lines"></ul>
         <p class="sum-total"><span>Total inc. GST</span><span id="total2"></span></p>
         <p class="fine">Includes installation and council approval. Perth metro. No payment today. We confirm your yard and final price at a free site visit. <button type="button" class="linkbtn" id="share">Copy a link to this design</button></p>
@@ -154,7 +154,7 @@
   <p>Prices include GST and are confirmed at a free site visit. Terra Tanks is an independent supplier. Images are illustrative.</p>
 </div></footer>
 
-<script src="/js/packages.js?v=4"></script>
+<script src="/js/packages.js?v=5"></script>
 <script>
 var state = PKG.fromHash(location.hash);
 var form = document.getElementById("config");
@@ -163,8 +163,8 @@ function $(id) { return document.getElementById(id); }
 
 // Price shown inside each box. The deck size and board boxes add up to the deck price in the quote.
 function priceOf(key, id) {
-  if (key === "deckSize") return PKG.deckPrice[id].composite;
-  if (key === "deckMat") return PKG.deckPrice[state.deckSize][id] - PKG.deckPrice[state.deckSize].composite;
+  if (key === "deckSize") return PKG.deckPrice[id].moonlight;
+  if (key === "deckMat") return PKG.deckPrice[state.deckSize][id] - PKG.deckPrice[state.deckSize].moonlight;
   return PKG.find(key, id).price;
 }
 
