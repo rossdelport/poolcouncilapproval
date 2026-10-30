@@ -38,7 +38,7 @@ var PKG = {
     { id: "basic", name: "Landscaping", note: "$2,000 allowance. Choose your plants, turf and mulch with our landscaper.", price: 0 }
   ],
   extras: [
-    { id: "heat",  name: "Heat pump", note: "Swim all year round.", price: 2750 },
+    { id: "heat",  name: "Heat pump", note: "Swim all year round. Heats the pool to 36°C in 12 to 18 hours with the cover on (up to 40°C), then holds it for about $1 a day.", price: 2750 },
     { id: "cover", name: "Premium hard-shell cover", note: "Keeps leaves out and warmth in.", price: 875 },
     { id: "liner", name: "Interior liner", note: "Soft blue finish and a 3-year warranty.", price: 400 }
   ]
