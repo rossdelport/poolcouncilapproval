@@ -261,7 +261,7 @@ form.addEventListener("change", function (e) {
   var t = e.target;
   if (t.name === "extras") {
     state.extras = [].map.call(form.querySelectorAll('input[name="extras"]:checked'), function (i) { return i.value; });
-    closeUp = t.checked ? { src: "extra-" + t.value, cap: PKG.find("extras", t.value).name, close: true } : null;
+    closeUp = null; // extras never change the photo, so the customer's design stays on screen
   } else {
     state[t.name] = t.value;
     closeUp = t.name === "size" ? { src: "size-" + t.value, cap: PKG.find("size", t.value).name, close: true } : null;
