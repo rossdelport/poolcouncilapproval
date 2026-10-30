@@ -16,7 +16,7 @@ var PKG = {
   ],
   fence: [
     { id: "vertibar", name: "Black Vertibar aluminium", note: "Classic, tough and fully pool-compliant.", price: 0 },
-    { id: "slat",     name: "Aluminium batten", note: "A warm timber look that never needs painting.", price: 1600 },
+    { id: "blade",    name: "Aluminium blade, Monument", note: "Wide flat blades in dark charcoal. Sleek, modern and never needs painting.", price: 1600 },
     { id: "glass",    name: "Frameless glass", note: "Uninterrupted views. The showpiece option.", price: 5100 }
   ],
   deckSize: [
@@ -24,14 +24,15 @@ var PKG = {
     { id: "large", name: "25 m² deck", note: "Wraps the pool, with room to lounge and entertain." }
   ],
   deckMat: [
-    { id: "composite", name: "Composite, ash grey", short: "ash grey composite", note: "No oiling, no splinters, stays cooler underfoot.", top: "#bdb7ad", face: "#8f8a82" },
-    { id: "merbau",    name: "Merbau hardwood", short: "merbau", note: "Rich natural timber. Oil once or twice a year.", top: "#9a5a3a", face: "#6e3d26" },
-    { id: "premium",   name: "Premium composite", short: "premium composite", note: "Deeper timber grain and a longer warranty.", top: "#b48d64", face: "#86684a" }
+    { id: "moonlight", name: "Ekodeck Moonlight", short: "Moonlight composite", note: "Soft light grey composite. No oiling, no splinters, stays cooler underfoot.", top: "#c9c4bb", face: "#9a958d" },
+    { id: "nightfall", name: "Ekodeck Nightfall", short: "Nightfall composite", note: "Deep charcoal composite. No oiling, no splinters.", top: "#4a4b4d", face: "#333436" },
+    { id: "merbau",    name: "Merbau hardwood", short: "merbau", note: "Rich red-brown timber. Oil once or twice a year.", top: "#9a5a3a", face: "#6e3d26" },
+    { id: "spotted",   name: "Spotted gum hardwood", short: "spotted gum", note: "Honey-toned Aussie hardwood. Oil once or twice a year.", top: "#c18a5a", face: "#8f6440" }
   ],
   // Deck price depends on size and material
   deckPrice: {
-    small: { composite: 0,    merbau: 1600,  premium: 3600 },
-    large: { composite: 7100, merbau: 11000, premium: 16000 }
+    small: { moonlight: 0,    nightfall: 0,    merbau: 1600,  spotted: 1600 },
+    large: { moonlight: 7100, nightfall: 7100, merbau: 11000, spotted: 11000 }
   },
   // One landscaping allowance, no garden upgrades (customer picks plants with the landscaper)
   land: [
@@ -54,10 +55,10 @@ PKG.find = function (key, id) {
 };
 
 PKG.defaults = function () {
-  return { size: "family", finish: "galv", fence: "vertibar", deckSize: "small", deckMat: "composite", land: "basic", extras: [] };
+  return { size: "family", finish: "galv", fence: "vertibar", deckSize: "small", deckMat: "moonlight", land: "basic", extras: [] };
 };
 
-// Turn a build into "family/galv/vertibar/small/composite/basic/heat+cover" and back
+// Turn a build into "family/galv/vertibar/small/moonlight/basic/heat+cover" and back
 PKG.KEYS = ["size", "finish", "fence", "deckSize", "deckMat", "land"];
 PKG.toHash = function (s) {
   return PKG.KEYS.map(function (k) { return s[k]; }).concat(s.extras.join("+")).join("/");
@@ -102,7 +103,7 @@ PKG.priceText = function (p) {
 // so new colour photos appear by themselves once they are added to images/pool.
 PKG.photos = function (s) {
   var scene = ["s", s.fence, s.deckSize, s.deckMat].join("-");
-  var list = [scene + "-" + s.finish, scene + "-galv", "s-vertibar-small-composite-galv"];
+  var list = [scene + "-" + s.finish, scene + "-galv", "s-vertibar-small-moonlight-galv"];
   return list.filter(function (name, i) { return list.indexOf(name) === i; });
 };
 
