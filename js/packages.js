@@ -16,7 +16,7 @@ var PKG = {
   ],
   fence: [
     { id: "vertibar", name: "Black Vertibar aluminium", note: "Classic, tough and fully pool-compliant.", price: 0 },
-    { id: "blade",    name: "Aluminium blade, Monument", note: "Wide flat blades in dark charcoal. Sleek, modern and never needs painting.", price: 1600 },
+    { id: "blade",    name: "Aluminium blade, Monument", note: "Wide flat blades in dark charcoal. Sleek, modern and never needs painting.", price: 1750 },
     { id: "glass",    name: "Frameless glass", note: "Uninterrupted views. The showpiece option.", price: 5100 }
   ],
   deckSize: [
@@ -31,8 +31,8 @@ var PKG = {
   ],
   // Deck price depends on size and material
   deckPrice: {
-    small: { moonlight: 0,    nightfall: 0,    merbau: 1600,  spotted: 1600 },
-    large: { moonlight: 7100, nightfall: 7100, merbau: 11000, spotted: 11000 }
+    small: { moonlight: 0,    nightfall: 0,    merbau: 1600,  spotted: 2800 },
+    large: { moonlight: 7100, nightfall: 7100, merbau: 11000, spotted: 14000 }
   },
   // One landscaping allowance, no garden upgrades (customer picks plants with the landscaper)
   land: [
